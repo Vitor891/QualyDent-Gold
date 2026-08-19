@@ -1,623 +1,968 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>QualyDent Gold | Clínica Odontológica &amp; Harmonização Facial — Rio do Sul e Otacílio Costa</title>
-<meta name="description" content="QualyDent Gold: mais de 35 anos de excelência em odontologia e harmonização facial em Rio do Sul e Otacílio Costa (SC). 5,0★ no Google. Agende sua consulta pelo WhatsApp.">
-<meta name="theme-color" content="#0a0a08">
-<link rel="icon" type="image/png" href="assets/img/brand/icon-square-sm.png">
-<link rel="apple-touch-icon" href="assets/img/brand/icon-square-sm.png">
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="QualyDent Gold — Clínica Odontológica & Harmonização Facial">
-<meta property="og:description" content="Mais de 35 anos transformando sorrisos, faces e vidas em Rio do Sul e Otacílio Costa (SC). Agende pelo WhatsApp.">
-<meta property="og:image" content="assets/img/clinics/clinica-1.jpg">
-<meta property="og:locale" content="pt_BR">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>QualyDent Gold — Transformando sorrisos, faces e vidas | Rio do Sul & Otacílio Costa</title>
+<meta name="description" content="Clínica odontológica com mais de 35 anos de excelência. Implante dentário, odontologia estética, ortodontia e odontopediatria em Rio do Sul e Otacílio Costa (SC).">
+<meta name="theme-color" content="#0A0A0B">
+<link rel="icon" href="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Logo-qualy-degrade-fund-preto-300x300.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Poppins:wght@300;400;500;600;700&family=Alex+Brush&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --ink:#0A0A0B; --ink-2:#101012; --ink-3:#17171A;
+  --line:rgba(232,200,122,.16);
+  --gold-1:#9E6F1F; --gold-2:#D9AF57; --gold-3:#F2DFA8; --gold-4:#B8862F;
+  --cream:#FAF7F2; --cream-2:#F2ECE2;
+  --txt:#F6F1E8; --txt-dim:rgba(246,241,232,.66); --txt-dimmer:rgba(246,241,232,.44);
+  --ink-on-light:#161512; --dim-on-light:rgba(22,21,18,.66);
+  --grad-gold:linear-gradient(115deg,#9E6F1F 0%,#D9AF57 32%,#F2DFA8 52%,#D9AF57 72%,#9E6F1F 100%);
+  --r-sm:10px; --r-md:16px; --r-lg:24px; --r-xl:34px;
+  --pad:clamp(20px,5vw,64px);
+  --maxw:1240px;
+  --shadow:0 30px 80px -30px rgba(0,0,0,.75);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ink);color:var(--txt);
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:clamp(15px,.42vw + 14px,17px);line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block;background:#1a1a1d}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:400;line-height:1.08;letter-spacing:-.015em;margin:0}
+p{margin:0}
+::selection{background:var(--gold-2);color:#0A0A0B}
 
-<link rel="stylesheet" href="css/style.css">
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+.section{padding-block:clamp(64px,9vw,132px);position:relative}
+.gold{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.6em;font-size:.7rem;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--gold-2);margin-bottom:1.1rem;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--grad-gold)}
+h2.title{font-size:clamp(2rem,4.4vw,3.35rem);margin-bottom:.5em}
+.lead{color:var(--txt-dim);max-width:62ch;font-size:clamp(1rem,.35vw + .93rem,1.09rem)}
+
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6em;
+  padding:.95em 1.65em;border-radius:999px;font-size:.94rem;font-weight:600;
+  letter-spacing:.01em;transition:transform .45s var(--ease),box-shadow .45s var(--ease),background .3s,color .3s,border-color .3s;
+  text-align:center;line-height:1.2;
+}
+.btn svg{width:1.15em;height:1.15em;flex:none}
+.btn-gold{background:var(--grad-gold);color:#14100A;box-shadow:0 14px 34px -14px rgba(217,175,87,.75)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 22px 46px -16px rgba(217,175,87,.85)}
+.btn-ghost{border:1px solid var(--line);color:var(--txt);background:rgba(255,255,255,.02)}
+.btn-ghost:hover{border-color:rgba(232,200,122,.5);background:rgba(232,200,122,.07);transform:translateY(-2px)}
+.btn-dark{background:var(--ink);color:var(--txt)}
+.btn-dark:hover{transform:translateY(-2px);box-shadow:0 18px 40px -18px rgba(0,0,0,.6)}
+.btn-lg{padding:1.1em 2.1em;font-size:1rem}
+.btn-block{width:100%}
+
+/* ============ 1. HEADER ============ */
+.hdr{position:fixed;inset:0 0 auto 0;z-index:90;transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
+.hdr.stuck{background:rgba(10,10,11,.82);backdrop-filter:blur(18px) saturate(140%);border-bottom-color:var(--line)}
+.hdr-in{display:flex;align-items:center;gap:clamp(16px,3vw,40px);height:76px}
+.brand{display:flex;align-items:center;gap:.7rem;flex:none}
+.brand img{width:38px;height:38px;border-radius:9px;background:transparent}
+.brand b{font-family:'Fraunces',serif;font-weight:500;font-size:1.06rem;letter-spacing:.01em;white-space:nowrap}
+.brand b span{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav{display:flex;gap:clamp(14px,1.7vw,28px);margin-left:auto;font-size:.9rem;color:var(--txt-dim)}
+.nav a{position:relative;padding:.3em 0;transition:color .3s}
+.nav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--grad-gold);transition:width .4s var(--ease)}
+.nav a:hover{color:var(--txt)}.nav a:hover::after{width:100%}
+.hdr .btn{margin-left:clamp(10px,1.6vw,22px)}
+.burger{display:none;margin-left:auto;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);align-items:center;justify-content:center}
+.burger span{display:block;width:18px;height:1.5px;background:var(--txt);position:relative;transition:.35s var(--ease)}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:var(--txt);transition:.35s var(--ease)}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger.open span{background:transparent}
+.burger.open span::before{top:0;transform:rotate(45deg)}
+.burger.open span::after{top:0;transform:rotate(-45deg)}
+.mnav{position:fixed;inset:76px 0 auto 0;z-index:89;background:rgba(10,10,11,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);transform:translateY(-140%);transition:transform .5s var(--ease);padding:1.2rem var(--pad) 2rem}
+.mnav.open{transform:translateY(0)}
+.mnav a{display:block;padding:.95rem 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:1.02rem}
+.mnav .btn{margin-top:1.4rem}
+
+/* ============ 2. HERO ============ */
+.hero{position:relative;padding-top:calc(76px + clamp(38px,7vw,84px));padding-bottom:clamp(48px,7vw,96px);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto -10%;height:120%;
+  background:radial-gradient(58% 52% at 72% 22%,rgba(217,175,87,.20),transparent 62%),
+             radial-gradient(46% 44% at 8% 78%,rgba(158,111,31,.16),transparent 66%);
+  pointer-events:none}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:180px;background:linear-gradient(to bottom,transparent,var(--ink));pointer-events:none}
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.06fr .94fr;
+  grid-template-areas:"title founder" "lead founder" "actions founder";
+  column-gap:clamp(28px,4.5vw,72px);row-gap:0;align-items:center}
+.hero-title{grid-area:title;align-self:end}
+.hero-lead{grid-area:lead}
+.hero-actions{grid-area:actions;align-self:start}
+.hero h1{font-size:clamp(2.5rem,6.4vw,4.6rem);line-height:1.02;margin-bottom:.42em}
+.hero .lead{margin-bottom:0}
+.hero-lead{margin-bottom:2rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.75rem}
+.hero-trust{display:flex;align-items:center;gap:.75rem;margin-top:1.7rem;color:var(--txt-dimmer);font-size:.83rem}
+.stars{display:inline-flex;gap:2px;color:var(--gold-2)}
+.stars svg{width:14px;height:14px}
+
+/* founder visual — foto solta sobre a página, sem moldura e sem recorte */
+.founder{grid-area:founder;position:relative;justify-self:center;width:100%;max-width:440px;
+  display:flex;flex-direction:column;align-items:center}
+.founder-photo{display:block;width:100%;height:auto;max-width:100%;
+  background:transparent;filter:drop-shadow(0 30px 48px rgba(0,0,0,.6));border-radius:var(--r-lg)}
+.founder-glow{position:absolute;inset:-8% -6% 12%;border-radius:50%;background:radial-gradient(closest-side,rgba(217,175,87,.20),transparent 72%);filter:blur(10px);z-index:-1}
+.founder-card{
+  position:relative;margin:1.1rem auto 0;width:min(100%,404px);z-index:3;
+  background:rgba(16,16,18,.72);backdrop-filter:blur(16px) saturate(150%);
+  border:1px solid var(--line);border-radius:var(--r-md);padding:1rem 1.15rem;
+  display:flex;align-items:center;gap:.95rem;box-shadow:0 20px 50px -24px rgba(0,0,0,.9)
+}
+.founder-card .ring{width:44px;height:44px;border-radius:50%;flex:none;display:grid;place-items:center;background:var(--grad-gold);color:#14100A}
+.founder-card .ring svg{width:22px;height:22px}
+.founder-card .nm{font-family:'Fraunces',serif;font-size:1.06rem;line-height:1.2}
+.founder-card .rl{font-size:.76rem;color:var(--txt-dim);letter-spacing:.04em;margin-top:.15rem}
+
+/* ============ 3. HIGHLIGHTS ============ */
+.hl{border-block:1px solid var(--line);background:linear-gradient(to bottom,rgba(217,175,87,.045),transparent)}
+.hl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-inline:1px solid var(--line)}
+.hl-item{background:var(--ink);padding:clamp(22px,2.6vw,34px) clamp(18px,2vw,28px);display:flex;flex-direction:column;gap:.55rem;transition:background .4s}
+.hl-item:hover{background:var(--ink-2)}
+.hl-item .ic{width:34px;height:34px;color:var(--gold-2)}
+.hl-item .ic svg{width:100%;height:100%}
+.hl-item b{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;letter-spacing:-.01em}
+.hl-item small{color:var(--txt-dim);font-size:.87rem;line-height:1.5}
+
+/* ============ 4. TREATMENTS ============ */
+.t-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1.5rem;margin-bottom:clamp(30px,4vw,54px)}
+.t-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2vw,26px)}
+.tcard{position:relative;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:linear-gradient(180deg,var(--ink-2),var(--ink));transition:transform .55s var(--ease),border-color .45s,box-shadow .55s var(--ease)}
+.tcard:hover{transform:translateY(-6px);border-color:rgba(232,200,122,.42);box-shadow:0 34px 70px -34px rgba(0,0,0,.9)}
+.tcard-img{position:relative;aspect-ratio:16/10;overflow:hidden}
+.tcard-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+.tcard:hover .tcard-img img{transform:scale(1.06)}
+.tcard-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,11,.92),rgba(10,10,11,.12) 62%)}
+.tcard-tag{position:absolute;z-index:2;top:14px;left:14px;background:rgba(10,10,11,.7);backdrop-filter:blur(10px);border:1px solid var(--line);color:var(--gold-3);font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:.42rem .8rem;border-radius:999px}
+.tcard-body{padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;gap:.9rem;flex:1}
+.tcard h3{font-size:clamp(1.35rem,1.7vw,1.7rem)}
+.tcard h3 em{font-style:italic;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tcard p{color:var(--txt-dim);font-size:.95rem}
+.tlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.5rem}
+.tlist li{display:flex;gap:.6rem;font-size:.9rem;color:var(--txt-dim);line-height:1.5}
+.tlist li::before{content:"";flex:none;width:6px;height:6px;margin-top:.55em;border-radius:50%;background:var(--grad-gold)}
+.tcard-links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:auto;padding-top:.6rem}
+.tlink{display:inline-flex;align-items:center;gap:.45em;font-size:.87rem;font-weight:600;color:var(--gold-2);padding:.6em 0;transition:gap .35s var(--ease),color .3s}
+.tlink svg{width:1em;height:1em;transition:transform .35s var(--ease)}
+.tlink:hover{gap:.8em;color:var(--gold-3)}
+.tcard-links .btn{padding:.66em 1.15em;font-size:.85rem}
+
+.also{margin-top:clamp(28px,3.4vw,44px);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(20px,2.4vw,32px);background:linear-gradient(120deg,rgba(217,175,87,.06),transparent 60%)}
+.also h4{font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2);margin-bottom:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.55rem}
+.chip{display:inline-flex;align-items:center;gap:.5em;border:1px solid var(--line);border-radius:999px;padding:.55em 1.05em;font-size:.87rem;color:var(--txt-dim);background:rgba(255,255,255,.02);transition:.35s var(--ease)}
+.chip:hover{color:var(--txt);border-color:rgba(232,200,122,.45);background:rgba(232,200,122,.08);transform:translateY(-2px)}
+
+/* AJUSTE: CTA "Fale com a gente" centralizado */
+.t-cta{margin-top:clamp(30px,4vw,52px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.9rem}
+.t-cta p{color:var(--txt-dim);font-size:.95rem;max-width:46ch}
+
+/* ============ 5. TEAM ============ */
+.team{background:var(--ink-2);border-block:1px solid var(--line)}
+.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.4vw,20px);margin-top:clamp(30px,4vw,52px)}
+.pcard{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--ink);transition:transform .55s var(--ease),border-color .45s}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(232,200,122,.4)}
+.pcard-img{aspect-ratio:3/4;overflow:hidden;position:relative;background:radial-gradient(75% 60% at 50% 85%,rgba(217,175,87,.13),transparent 70%),linear-gradient(170deg,#1B1A17,#0D0D0E)}
+.pcard-img img{width:100%;height:100%;object-fit:contain;object-position:center bottom;padding:8% 6% 0;filter:grayscale(.2);transition:filter .6s,transform 1s var(--ease)}
+.pcard:hover .pcard-img img{filter:grayscale(0);transform:scale(1.05)}
+.pcard-img::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top,rgba(10,10,11,.6) 0%,rgba(10,10,11,0) 30%)}
+.pcard-body{padding:1rem 1.1rem 1.25rem}
+.pcard b{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:1.12rem}
+.pcard small{display:block;margin-top:.25rem;font-size:.79rem;color:var(--gold-2);letter-spacing:.06em}
+
+/* ============ 6. SOCIAL PROOF ============ */
+.rate-row{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,1.6vw,22px);margin-bottom:clamp(26px,3vw,40px)}
+.rate{display:flex;align-items:center;gap:1rem;border:1px solid var(--line);border-radius:var(--r-lg);padding:1.15rem 1.35rem;background:linear-gradient(120deg,rgba(217,175,87,.07),transparent 65%)}
+.rate .score{font-family:'Fraunces',serif;font-size:2.4rem;line-height:1;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rate .meta b{display:block;font-family:'Inter',sans-serif;font-weight:600;font-size:.95rem}
+.rate .meta small{color:var(--txt-dim);font-size:.8rem}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,22px)}
+.rev{border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(20px,2.2vw,28px);background:var(--ink-2);display:flex;flex-direction:column;gap:.85rem;transition:transform .5s var(--ease),border-color .4s}
+.rev:hover{transform:translateY(-5px);border-color:rgba(232,200,122,.35)}
+.rev q{font-family:'Fraunces',serif;font-size:1.05rem;line-height:1.5;font-style:italic;color:var(--txt);quotes:none}
+.rev .who{display:flex;align-items:center;gap:.7rem;margin-top:auto;padding-top:.4rem;border-top:1px solid rgba(255,255,255,.06)}
+.rev .av{width:34px;height:34px;border-radius:50%;flex:none;display:grid;place-items:center;background:var(--grad-gold);color:#14100A;font-weight:700;font-size:.85rem}
+.rev .who b{font-size:.9rem;font-weight:600}
+.rev .who small{display:block;font-size:.74rem;color:var(--txt-dimmer)}
+.vid-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,20px);margin-top:clamp(22px,2.6vw,34px)}
+.vid{position:relative;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5;background:#141416;transition:transform .55s var(--ease),border-color .4s}
+.vid:hover{transform:translateY(-5px);border-color:rgba(232,200,122,.45)}
+.vid img{width:100%;height:100%;object-fit:cover}
+.vid::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,11,.85),transparent 55%)}
+.vid figcaption{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:.9rem 1rem;font-size:.87rem;font-weight:600}
+.vid figcaption small{display:block;font-weight:400;font-size:.72rem;color:var(--txt-dim);letter-spacing:.06em;text-transform:uppercase;margin-top:.15rem}
+
+/* ============ 7. INSTAGRAM ============ */
+.ig{border-block:1px solid var(--line);background:var(--ink-2)}
+.ig-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1.2rem;margin-bottom:clamp(22px,2.6vw,34px)}
+.ig-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.2vw,16px)}
+.ig-grid a{position:relative;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);aspect-ratio:1;background:#141416}
+.ig-grid img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease),filter .5s}
+.ig-grid a:hover img{transform:scale(1.07)}
+.ig-grid a::after{content:"";position:absolute;inset:0;background:rgba(10,10,11,.32);opacity:0;transition:opacity .4s}
+.ig-grid a:hover::after{opacity:1}
+
+/* ============ 8. CLINICS ============ */
+.cl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2vw,26px);margin-top:clamp(30px,4vw,52px)}
+.clinic{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--ink-2);display:flex;flex-direction:column}
+.clinic-img{aspect-ratio:16/9;overflow:hidden;position:relative}
+.clinic-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+.clinic:hover .clinic-img img{transform:scale(1.05)}
+.clinic-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,11,.85),transparent 60%)}
+.clinic-badge{position:absolute;z-index:2;top:14px;left:14px;display:inline-flex;align-items:center;gap:.4rem;background:rgba(10,10,11,.72);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;padding:.4rem .8rem;font-size:.78rem;font-weight:600;color:var(--gold-3)}
+.clinic-body{padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;gap:1rem;flex:1}
+.clinic h3{font-size:clamp(1.4rem,1.9vw,1.8rem)}
+.info{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.75rem}
+.info li{display:flex;gap:.75rem;font-size:.92rem;color:var(--txt-dim);line-height:1.5}
+.info svg{width:18px;height:18px;flex:none;margin-top:.18em;color:var(--gold-2)}
+.info a:hover{color:var(--gold-3)}
+.map{border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);filter:grayscale(1) invert(.92) contrast(.85);transition:filter .5s}
+.clinic:hover .map{filter:grayscale(.35) invert(.9) contrast(.9)}
+.map iframe{display:block;width:100%;height:180px;border:0}
+.clinic-cta{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:auto;padding-top:.4rem}
+.clinic-cta .btn{flex:1 1 160px}
+
+/* ============ 9. SPACE GALLERY ============ */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(110px,13vw,180px);gap:clamp(10px,1.2vw,16px);margin-top:clamp(26px,3vw,42px)}
+.gal figure{margin:0;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);position:relative;background:#141416}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+.gal figure:hover img{transform:scale(1.06)}
+.gal .tall{grid-row:span 2}
+.gal .wide{grid-column:span 2}
+
+/* ============ 10. FAQ ============ */
+.faq{background:var(--ink-2);border-block:1px solid var(--line)}
+.faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,4vw,64px);align-items:start}
+.acc{border-top:1px solid var(--line)}
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;padding:1.15rem 2.5rem 1.15rem 0;position:relative;font-family:'Fraunces',serif;font-size:clamp(1.02rem,1.2vw,1.18rem);line-height:1.35;transition:color .3s}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary:hover{color:var(--gold-3)}
+.acc summary::after{content:"";position:absolute;right:.35rem;top:1.5rem;width:12px;height:12px;
+  background:linear-gradient(var(--gold-2),var(--gold-2)) center/100% 1.5px no-repeat,linear-gradient(var(--gold-2),var(--gold-2)) center/1.5px 100% no-repeat;
+  transition:transform .4s var(--ease)}
+.acc details[open] summary::after{transform:rotate(135deg)}
+.acc .ans{padding:0 2.5rem 1.35rem 0;color:var(--txt-dim);font-size:.94rem}
+.faq-side{border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(22px,2.4vw,32px);background:linear-gradient(150deg,rgba(217,175,87,.09),transparent 62%);position:sticky;top:96px}
+.faq-side h3{font-size:1.5rem;margin-bottom:.6rem}
+.faq-side p{color:var(--txt-dim);font-size:.93rem;margin-bottom:1.3rem}
+
+/* ============ 11. FINAL CTA ============ */
+.final{position:relative;overflow:hidden;text-align:center}
+.final::before{content:"";position:absolute;inset:0;background:radial-gradient(52% 62% at 50% 12%,rgba(217,175,87,.20),transparent 66%)}
+.final-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:1.4rem}
+.final h2{font-size:clamp(2rem,5vw,3.6rem);max-width:16ch}
+.final p{color:var(--txt-dim);max-width:52ch}
+.final .row{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+
+/* ============ 12. FOOTER ============ */
+.ftr{border-top:1px solid var(--line);background:#08080A;padding-block:clamp(44px,5.5vw,72px) 0}
+.ftr-grid{display:grid;grid-template-columns:1.5fr 1fr 1.2fr 1fr;gap:clamp(24px,3vw,48px)}
+.ftr h5{font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2);margin:0 0 1.05rem}
+.ftr ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.62rem}
+.ftr a,.ftr li{font-size:.9rem;color:var(--txt-dim);line-height:1.5}
+.ftr a{transition:color .3s}.ftr a:hover{color:var(--gold-3)}
+.ftr-brand p{margin:1rem 0 1.35rem;color:var(--txt-dim);font-size:.92rem;max-width:38ch}
+.social{display:flex;gap:.6rem}
+.social a{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:.35s var(--ease)}
+.social a:hover{border-color:rgba(232,200,122,.55);background:rgba(232,200,122,.1);transform:translateY(-3px)}
+.social svg{width:18px;height:18px}
+.ftr-bot{margin-top:clamp(32px,4vw,54px);border-top:1px solid rgba(255,255,255,.07);padding-block:1.4rem 1.6rem;display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between;font-size:.79rem;color:var(--txt-dimmer)}
+
+/* ============ FLOAT + MODAL ============ */
+.float{position:fixed;right:clamp(14px,2.4vw,26px);bottom:clamp(14px,2.4vw,26px);z-index:80;display:inline-flex;align-items:center;gap:.6rem;
+  padding:.85rem 1.25rem;border-radius:999px;background:var(--grad-gold);color:#14100A;font-weight:700;font-size:.9rem;
+  box-shadow:0 18px 44px -14px rgba(217,175,87,.7);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.float:hover{transform:translateY(-3px) scale(1.02)}
+.float svg{width:20px;height:20px}
+.modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;background:rgba(5,5,6,.72);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.modal.open{opacity:1;visibility:visible}
+.modal-box{position:relative;width:min(460px,100%);background:linear-gradient(165deg,var(--ink-3),var(--ink));border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(24px,3vw,36px);text-align:center;transform:translateY(16px) scale(.97);transition:transform .45s var(--ease);box-shadow:var(--shadow)}
+.modal.open .modal-box{transform:none}
+.modal-box h3{font-size:1.6rem;margin-bottom:.45rem}
+.modal-box p{color:var(--txt-dim);font-size:.92rem;margin-bottom:1.5rem}
+.modal-box .btn{margin-bottom:.65rem}
+.modal-box .unit small{display:block;font-weight:400;font-size:.75rem;opacity:.75;margin-top:.1rem}
+.modal-close{position:absolute;top:12px;right:12px;z-index:2;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--txt-dim)}
+.modal-inner{position:static}
+.modal-box h3{padding-inline:2.6rem}
+
+/* ============ REVEAL ============ */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto}.rv{opacity:1;transform:none}}
+
+/* ============ RESPONSIVE ============ */
+@media (min-width:921px){ .mnav{display:none} }
+@media (max-width:1080px){
+  .hl-grid{grid-template-columns:repeat(2,1fr)}
+  .team-grid{grid-template-columns:repeat(3,1fr)}
+  .rev-grid{grid-template-columns:repeat(2,1fr)}
+  .ig-grid{grid-template-columns:repeat(3,1fr)}
+  .ftr-grid{grid-template-columns:1fr 1fr}
+  .faq-grid{grid-template-columns:1fr}
+  .faq-side{position:static}
+}
+@media (max-width:920px){
+  .nav,.hdr .btn{display:none}
+  .burger{display:flex}
+  .hero-in{grid-template-columns:1fr;grid-template-areas:"title" "founder" "lead" "actions";row-gap:clamp(18px,3.4vw,26px)}
+  .hero{text-align:center}
+  .hero .lead{margin-inline:auto}
+  .hero-lead{margin-bottom:0}
+  .hero-cta,.hero-trust{justify-content:center}
+  .founder{max-width:340px}
+  .t-grid,.cl-grid{grid-template-columns:1fr}
+  .vid-grid{grid-template-columns:repeat(2,1fr)}
+  .rate-row{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  .hl-grid{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:repeat(2,1fr)}
+  .rev-grid{grid-template-columns:1fr}
+  .ig-grid{grid-template-columns:repeat(2,1fr)}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .gal .wide{grid-column:span 2}
+  .ftr-grid{grid-template-columns:1fr}
+  .hero h1{font-size:clamp(2.1rem,9vw,2.9rem)}
+  .founder{max-width:300px}
+  
+  .btn{width:100%}
+  .hero-cta,.final .row,.tcard-links,.clinic-cta{width:100%}
+  .tcard-links .btn{width:auto}
+  .float span{display:none}
+  .float{padding:1rem;border-radius:50%}
+}
+@media (max-width:400px){
+  .team-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
 
-<!-- ============ ícones (sprite) ============ -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
-    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 5 19 12 13 19"/></symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
-    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></symbol>
-    <symbol id="i-insta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></symbol>
-    <symbol id="i-fb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
-    <symbol id="i-wa" viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3C9.1 3 3.46 8.64 3.46 15.58c0 2.32.62 4.51 1.78 6.46L3 29l7.15-2.22a12.5 12.5 0 0 0 5.89 1.5h.01c6.94 0 12.58-5.64 12.58-12.58C28.63 8.76 22.98 3 16.04 3zm0 22.9h-.01a10.4 10.4 0 0 1-5.31-1.46l-.38-.22-3.94 1.23 1.24-3.84-.25-.39a10.32 10.32 0 0 1-1.6-5.54c0-5.76 4.7-10.45 10.46-10.45 2.79 0 5.42 1.09 7.39 3.06a10.36 10.36 0 0 1 3.06 7.39c0 5.76-4.7 10.22-10.66 10.22zm5.72-7.7c-.31-.16-1.86-.92-2.15-1.02-.29-.11-.5-.16-.71.16-.21.31-.81 1.02-1 1.23-.18.21-.37.24-.68.08-.31-.16-1.3-.48-2.49-1.54-.92-.82-1.54-1.83-1.72-2.14-.18-.31-.02-.48.14-.63.14-.14.31-.37.47-.55.16-.19.21-.32.31-.53.1-.21.05-.4-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.62-.52-.53-.71-.54h-.6c-.21 0-.55.08-.84.4-.29.31-1.1 1.08-1.1 2.63 0 1.55 1.13 3.04 1.29 3.25.16.21 2.22 3.39 5.38 4.76.75.32 1.34.52 1.8.66.76.24 1.44.21 1.99.13.61-.09 1.86-.76 2.12-1.5.26-.74.26-1.37.18-1.5-.08-.13-.29-.21-.6-.37z"/></symbol>
-  </defs>
-</svg>
-
-<!-- ============ HEADER ============ -->
-<header class="site-header">
-  <div class="container">
+<!-- ============================================================
+     BLOCO 1 — HEADER
+============================================================ -->
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
     <a href="#topo" class="brand">
-      <img src="assets/img/brand/logo-branco-sm.png" alt="QualyDent Gold" style="height:32px;width:auto;">
+      <img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Logo-qualy-degrade-fund-preto-300x300.png" alt="QualyDent Gold">
+      <b>QualyDent <span>Gold</span></b>
     </a>
-    <nav class="main-nav" aria-label="Navegação principal">
-      <ul>
-        <li><a href="#tratamentos">Tratamentos</a></li>
-        <li><a href="#equipe">Equipe</a></li>
-        <li><a href="#ofertas">Planos</a></li>
-        <li><a href="#depoimentos">Depoimentos</a></li>
-        <li><a href="#clinicas">Clínicas</a></li>
-        <li><a href="#duvidas">Dúvidas</a></li>
-      </ul>
+    <nav class="nav">
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#equipe">Corpo clínico</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#clinicas">Clínicas</a>
+      <a href="#duvidas">Dúvidas</a>
     </nav>
-    <div class="header-actions">
-      <button type="button" class="btn btn-gold" data-wa-open data-wa-title="Vamos agendar sua consulta?">
-        <svg><use href="#i-wa"/></svg><span>Agendar consulta</span>
-      </button>
-      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+    <button class="btn btn-gold js-agendar" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="3"/></svg>
+      Agendar consulta
+    </button>
+    <button class="burger" id="burger" type="button" aria-label="Abrir menu"><span></span></button>
   </div>
 </header>
+<nav class="mnav" id="mnav">
+  <a href="#tratamentos">Tratamentos</a>
+  <a href="#equipe">Corpo clínico</a>
+  <a href="#depoimentos">Depoimentos</a>
+  <a href="#clinicas">Clínicas</a>
+  <a href="#duvidas">Dúvidas</a>
+  <button class="btn btn-gold btn-block js-agendar" type="button">Agendar consulta</button>
+</nav>
 
-<div class="mobile-nav" id="mobile-nav">
-  <ul>
-    <li><a href="#tratamentos">Tratamentos</a></li>
-    <li><a href="#equipe">Equipe</a></li>
-    <li><a href="#ofertas">Planos</a></li>
-    <li><a href="#depoimentos">Depoimentos</a></li>
-    <li><a href="#clinicas">Clínicas</a></li>
-    <li><a href="#duvidas">Dúvidas</a></li>
-  </ul>
-  <div class="mobile-nav-foot">
-    <a class="btn btn-gold btn-block" href="#" data-wa-direct="riodosul" data-wa-message="Olá! Encontrei o site da QualyDent Gold e gostaria de agendar uma consulta em Rio do Sul.">
-      <svg><use href="#i-wa"/></svg> Rio do Sul
-    </a>
-    <a class="btn btn-ghost btn-block" href="#" data-wa-direct="otacilio" data-wa-message="Olá! Encontrei o site da QualyDent Gold e gostaria de agendar uma consulta em Otacílio Costa.">
-      <svg><use href="#i-wa"/></svg> Otacílio Costa
-    </a>
-  </div>
-</div>
-
-<!-- ============ HERO ============ -->
+<!-- ============================================================
+     BLOCO 2 — HERO  (com a foto do fundador)
+============================================================ -->
 <section class="hero" id="topo">
-  <div class="hero-media">
-    <img src="assets/img/clinics/clinica-1.jpg" alt="Fachada iluminada da QualyDent Gold, em tons de preto e dourado" loading="eager">
-  </div>
-  <div class="hero-glow" aria-hidden="true"></div>
-
-  <div class="container hero-inner">
-    <img class="hero-mark" src="assets/img/brand/icon-square-sm.png" alt="">
-    <p class="eyebrow hero-eyebrow">Clínica Odontológica &amp; Harmonização Facial</p>
-    <h1>Transformando <em>sorrisos</em>, faces e vidas.</h1>
-    <p class="hero-sub">Há mais de 35 anos cuidando de sorrisos em Santa Catarina. Duas clínicas — Rio do Sul e Otacílio Costa — pensadas para te acolher, te entender e te transmitir confiança em cada etapa do seu tratamento.</p>
-
-    <div class="hero-ctas">
-      <a class="btn btn-gold" href="#" data-wa-direct="riodosul" data-wa-message="Olá! Encontrei o site da QualyDent Gold e gostaria de agendar uma consulta em Rio do Sul.">
-        <svg><use href="#i-wa"/></svg> Agendar em Rio do Sul
-      </a>
-      <a class="btn btn-line" href="#" data-wa-direct="otacilio" data-wa-message="Olá! Encontrei o site da QualyDent Gold e gostaria de agendar uma consulta em Otacílio Costa.">
-        <svg><use href="#i-wa"/></svg> Agendar em Otacílio Costa
-      </a>
+  <div class="wrap hero-in">
+    <div class="hero-title rv">
+      <span class="eyebrow">Rio do Sul &amp; Otacílio Costa · SC</span>
+      <h1>Transformando <span class="gold">sorrisos</span>, faces e vidas.</h1>
     </div>
 
-    <div class="hero-stats">
-      <div class="hero-stat"><b>35+</b><span>ANOS DE EXPERIÊNCIA</span></div>
-      <div class="hero-stat"><b>5,0★</b><span>NO GOOGLE (AMBAS UNIDADES)</span></div>
-      <div class="hero-stat"><b>02</b><span>CLÍNICAS EM SANTA CATARINA</span></div>
-      <div class="hero-stat"><b>+2mil</b><span>SEGUIDORES NO INSTAGRAM</span></div>
-    </div>
-  </div>
-
-  <div class="scroll-cue"><span>Role a página</span><i></i></div>
-</section>
-
-<!-- ============ TRUST STRIP ============ -->
-<div class="trust-strip" aria-hidden="true">
-  <div class="trust-track">
-    <span>5,0 no Google · Rio do Sul (65 avaliações)</span>
-    <span>5,0 no Google · Otacílio Costa</span>
-    <span>Mais de 35 anos de experiência</span>
-    <span>Equipe com 5 cirurgiões-dentistas</span>
-    <span>Tratamento parcelado</span>
-    <span>Odontologia + Harmonização Facial</span>
-    <span>5,0 no Google · Rio do Sul (65 avaliações)</span>
-    <span>5,0 no Google · Otacílio Costa</span>
-    <span>Mais de 35 anos de experiência</span>
-    <span>Equipe com 5 cirurgiões-dentistas</span>
-    <span>Tratamento parcelado</span>
-    <span>Odontologia + Harmonização Facial</span>
-  </div>
-</div>
-
-<!-- ============ TRATAMENTOS ============ -->
-<section class="section section-cream" id="tratamentos">
-  <div class="container">
-    <div class="head-row reveal">
-      <div class="section-head" style="margin-bottom:0;">
-        <p class="eyebrow">Tratamentos</p>
-        <h2 class="section-title">Cuidados que mudam <em>sorrisos</em></h2>
-        <p class="lede">Da primeira consulta do seu filho aos resultados que renovam sua autoestima. Também realizamos prótese dentária, clareamento e endodontia — fale com a nossa equipe pelo WhatsApp para saber o que é indicado para o seu caso.</p>
+    <div class="founder rv">
+      <div class="founder-glow"></div>
+      <img class="founder-photo" src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Adriano-1.png" alt="Dr. Adriano, fundador da QualyDent Gold" loading="eager">
+      <div class="founder-card">
+        <span class="ring">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 9.4 8 10 4.6-.6 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
+        </span>
+        <div>
+          <div class="nm">Dr. Adriano</div>
+          <div class="rl">Fundador · Mestre em Odontologia · +35 anos de clínica</div>
+        </div>
       </div>
     </div>
 
-    <div class="treat-grid reveal-stagger">
-
-      <article class="treat-card" id="implante">
-        <div class="treat-media">
-          <img src="assets/img/treatments/implante.jpg" alt="Procedimento de implante dentário em detalhe" loading="lazy">
-        </div>
-        <div class="treat-body">
-          <h3>Implante Dentário</h3>
-          <p>Solução segura e eficaz para substituir dentes perdidos: uma raiz artificial fixada ao osso, com resultado estável e natural. Planejamento individual e tecnologia de diagnóstico avançada em cada etapa.</p>
-          <div class="treat-tags"><span>Raiz artificial</span><span>Planejamento individual</span><span>Resultado duradouro</span></div>
-          <div class="faq-mini">
-            <div class="faq-mini-item">
-              <button class="faq-mini-q" aria-expanded="false">Implante dentário dói?<span class="plus"></span></button>
-              <div class="faq-mini-a"><div class="faq-mini-a-inner">O procedimento é realizado com anestesia, o que torna a cirurgia confortável. No pós-operatório, o desconforto costuma ser leve e controlado com medicação.</div></div>
-            </div>
-            <div class="faq-mini-item">
-              <button class="faq-mini-q" aria-expanded="false">É definitivo?<span class="plus"></span></button>
-              <div class="faq-mini-a"><div class="faq-mini-a-inner">É uma solução de longa duração e, quando bem planejado e cuidado, pode durar muitos anos — depende de higiene adequada e acompanhamento profissional.</div></div>
-            </div>
-          </div>
-          <div class="treat-foot">
-            <button class="treat-link" data-wa-open data-wa-title="Agendar · Implante Dentário" data-wa-message="Olá! Vim pelo site da QualyDent Gold e gostaria de agendar uma avaliação para implante dentário.">
-              Quero avaliar meu implante <svg><use href="#i-arrow"/></svg>
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <article class="treat-card" id="estetica">
-        <div class="treat-media">
-          <img src="assets/img/treatments/facetas-porcelana.jpg" alt="Facetas dentárias em porcelana" loading="lazy">
-        </div>
-        <div class="treat-body">
-          <h3>Odontologia Estética</h3>
-          <p>Facetas em resina e porcelana corrigem forma, cor, tamanho e pequenas imperfeições. Planejamento totalmente individualizado, com análise estética, funcional e digital do sorriso — sempre com naturalidade.</p>
-          <div class="treat-tags"><span>Facetas em resina</span><span>Facetas em porcelana</span><span>Clareamento dental</span></div>
-          <div class="faq-mini">
-            <div class="faq-mini-item">
-              <button class="faq-mini-q" aria-expanded="false">Resina ou porcelana, qual a diferença?<span class="plus"></span></button>
-              <div class="faq-mini-a"><div class="faq-mini-a-inner">A resina é feita diretamente no consultório, em uma sessão. A porcelana é produzida em laboratório a partir de planejamento digital — maior durabilidade e estabilidade de cor.</div></div>
-            </div>
-            <div class="faq-mini-item">
-              <button class="faq-mini-q" aria-expanded="false">Ficam com cara de "artificial"?<span class="plus"></span></button>
-              <div class="faq-mini-a"><div class="faq-mini-a-inner">Não, quando bem planejadas. Cor, formato e translucidez são escolhidos de acordo com rosto, tom de pele e sorriso — o foco é sempre a naturalidade.</div></div>
-            </div>
-          </div>
-          <div class="treat-foot">
-            <button class="treat-link" data-wa-open data-wa-title="Agendar · Odontologia Estética" data-wa-message="Olá! Vim pelo site da QualyDent Gold e gostaria de saber mais sobre facetas e odontologia estética.">
-              Quero renovar meu sorriso <svg><use href="#i-arrow"/></svg>
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <article class="treat-card" id="ortodontia">
-        <div class="treat-media">
-          <img src="assets/img/treatments/aparelho-fixo.jpg" alt="Aparelho ortodôntico fixo metálico" loading="lazy">
-        </div>
-        <div class="treat-body">
-          <h3>Ortodontia</h3>
-          <p>Cuidamos da função da mordida, da estética do sorriso e da saúde bucal como um todo, com planejamento individual para crianças, adolescentes e adultos — sempre com segurança e acompanhamento contínuo.</p>
-          <div class="treat-tags"><span>Todas as idades</span><span>Acompanhamento contínuo</span><span>Opções discretas</span></div>
-          <div class="faq-mini">
-            <div class="faq-mini-item">
-              <button class="faq-mini-q" aria-expanded="false">Qual a idade ideal para começar?<span class="plus"></span></button>
-              <div class="faq-mini-a"><div class="faq-mini-a-inner">Recomendamos a primeira avaliação ortodôntica ainda na infância, por volta dos 6 a 7 anos, para acompanhar o crescimento e intervir no momento ideal.</div></div>
-            </div>
-            <div class="faq-mini-item">
-              <button class="faq-mini-q" aria-expanded="false">Adulto também pode usar aparelho?<span class="plus"></span></button>
-              <div class="faq-mini-a"><div class="faq-mini-a-inner">Sim. Tratamos muitos pacientes adultos — a ortodontia não tem limite de idade, desde que a saúde bucal esteja adequada. Hoje há opções mais discretas e confortáveis.</div></div>
-            </div>
-          </div>
-          <div class="treat-foot">
-            <button class="treat-link" data-wa-open data-wa-title="Agendar · Ortodontia" data-wa-message="Olá! Vim pelo site da QualyDent Gold e gostaria de agendar uma avaliação ortodôntica.">
-              Quero cuidar do meu sorriso <svg><use href="#i-arrow"/></svg>
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <article class="treat-card" id="odontopediatria">
-        <div class="treat-media">
-          <img src="assets/img/treatments/odontopediatria.jpg" alt="Atendimento de odontopediatria" loading="lazy">
-        </div>
-        <div class="treat-body">
-          <h3>Odontopediatria</h3>
-          <p>Cuidamos da saúde bucal de bebês, crianças e adolescentes, acompanhando o desenvolvimento da boca e prevenindo problemas futuros — com atendimento humanizado, lúdico e sem traumas.</p>
-          <div class="treat-tags"><span>Primeira infância</span><span>Atendimento lúdico</span><span>Prevenção</span></div>
-          <div class="faq-mini">
-            <div class="faq-mini-item">
-              <button class="faq-mini-q" aria-expanded="false">Quando levar meu filho pela 1ª vez?<span class="plus"></span></button>
-              <div class="faq-mini-a"><div class="faq-mini-a-inner">O ideal é que a primeira consulta aconteça assim que surgir o primeiro dente ou até o primeiro ano de vida — uma consulta preventiva e orientativa.</div></div>
-            </div>
-            <div class="faq-mini-item">
-              <button class="faq-mini-q" aria-expanded="false">E se meu filho tiver medo de dentista?<span class="plus"></span></button>
-              <div class="faq-mini-a"><div class="faq-mini-a-inner">É comum, e pode ser reduzido com acompanhamento precoce. Usamos técnicas específicas e linguagem lúdica para criar confiança e tornar a consulta uma experiência positiva.</div></div>
-            </div>
-          </div>
-          <div class="treat-foot">
-            <button class="treat-link" data-wa-open data-wa-title="Agendar · Odontopediatria" data-wa-message="Olá! Vim pelo site da QualyDent Gold e gostaria de agendar uma consulta de odontopediatria.">
-              Quero consultar com a odontopediatra <svg><use href="#i-arrow"/></svg>
-            </button>
-          </div>
-        </div>
-      </article>
-
+    <div class="hero-lead rv">
+      <p class="lead">Há mais de 35 anos cuidando de sorrisos em Santa Catarina. Uma clínica que te acolhe, te entende e te transmite confiança — com tecnologia de diagnóstico avançada e planejamento individual em cada etapa.</p>
     </div>
 
-    <div class="other-care reveal">
-      <strong>Também cuidamos de:</strong>
-      <ul>
-        <li>Prótese Dentária</li>
-        <li>Clareamento Dental</li>
-        <li>Endodontia</li>
-        <li>Harmonização Facial</li>
-      </ul>
-      <button class="btn btn-sm btn-ghost" style="margin-left:auto;color:var(--ink);border-color:rgba(216,168,9,0.5)" data-wa-open data-wa-title="Outros cuidados QualyDent Gold" data-wa-message="Olá! Vim pelo site da QualyDent Gold e gostaria de saber mais sobre os tratamentos disponíveis.">
+    <div class="hero-actions rv">
+      <div class="hero-cta">
+        <button class="btn btn-gold btn-lg js-agendar" type="button">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.16c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.98-.32-1.69-.62-2.97-1.28-4.91-4.27-5.06-4.47-.15-.2-1.21-1.61-1.21-3.07 0-1.46.77-2.18 1.04-2.48.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.42-.07.66.5.25.6.84 2.06.91 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.36 1.46.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.66-.15.27.1 1.71.81 2 .96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+          Agendar pelo WhatsApp
+        </button>
+        <a class="btn btn-ghost btn-lg" href="#tratamentos">Ver tratamentos</a>
+      </div>
+      <div class="hero-trust">
+        <span class="stars" aria-label="5 de 5 estrelas">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </span>
+        Nota 5,0 no Google · duas unidades em Santa Catarina
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BLOCO 3 — DESTAQUES
+============================================================ -->
+<section class="hl">
+  <div class="wrap" style="padding-inline:0">
+    <div class="hl-grid rv">
+      <div class="hl-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 9.4 8 10 4.6-.6 8-5 8-10V6l-8-4Z"/></svg></span>
+        <b>+35 anos</b>
+        <small>Uma trajetória sólida construída sobre confiança, técnica e cuidado.</small>
+      </div>
+      <div class="hl-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <b>5,0 no Google</b>
+        <small>Avaliação máxima nas duas unidades, feita por quem já foi atendido.</small>
+      </div>
+      <div class="hl-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 5.6a3.2 3.2 0 0 1 0 4.8"/><path d="M18.4 14.2A6.5 6.5 0 0 1 21.5 20"/></svg></span>
+        <b>Equipe completa</b>
+        <small>Cinco profissionais para implante, estética, ortodontia e odontopediatria.</small>
+      </div>
+      <div class="hl-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10Z"/><circle cx="12" cy="11" r="2.4"/></svg></span>
+        <b>Duas unidades</b>
+        <small>Rio do Sul e Otacílio Costa, com o mesmo padrão de atendimento.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BLOCO 4 — TRATAMENTOS  (CTA "Fale com a gente" centralizado)
+============================================================ -->
+<section class="section" id="tratamentos">
+  <div class="wrap">
+    <div class="t-head rv">
+      <div>
+        <span class="eyebrow">Tratamentos</span>
+        <h2 class="title">Cuidados que mudam <span class="gold">sorrisos</span></h2>
+        <p class="lead">Tratamentos completos para cuidar de todas as etapas do seu sorriso — do implante à estética, da ortodontia ao primeiro dente do seu filho.</p>
+      </div>
+    </div>
+
+    <div class="t-grid">
+      <!-- Implante -->
+      <article class="tcard rv">
+        <div class="tcard-img">
+          <span class="tcard-tag">Reabilitação</span>
+          <img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Implante-Dentario-1-e1769177714642.png" alt="Implante dentário na QualyDent Gold" loading="lazy">
+        </div>
+        <div class="tcard-body">
+          <h3>Implante <em>Dentário</em></h3>
+          <p>Segurança, função e naturalidade. A solução mais segura e eficaz para substituir dentes perdidos e recuperar função, conforto e naturalidade ao sorrir.</p>
+          <ul class="tlist">
+            <li>Raiz artificial fixada ao osso, com resultado estável e semelhante ao dente natural</li>
+            <li>Tratamento planejado de forma individual, com tecnologia de diagnóstico avançada</li>
+            <li>Precisão, segurança e previsibilidade em cada etapa</li>
+          </ul>
+          <div class="tcard-links">
+            <a class="tlink" href="https://www.qualydentgold.com.br/implante-dentario/" target="_blank" rel="noopener">Conhecer o tratamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <button class="btn btn-ghost js-agendar" type="button">Quero realizar meu implante</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Estética -->
+      <article class="tcard rv">
+        <div class="tcard-img">
+          <span class="tcard-tag">Estética</span>
+          <img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Facetas-em-Porcelana-1024x693.png" alt="Odontologia estética e facetas na QualyDent Gold" loading="lazy">
+        </div>
+        <div class="tcard-body">
+          <h3>Odontologia <em>Estética</em></h3>
+          <p>Estética, harmonia e naturalidade. Facetas em resina e porcelana para transformar o sorriso, corrigindo forma, cor, tamanho e pequenas imperfeições dentárias.</p>
+          <ul class="tlist">
+            <li>Planejamento totalmente individualizado</li>
+            <li>Análise estética, funcional e digital do sorriso</li>
+            <li>Mais autoestima, equilíbrio estético e confiança ao sorrir</li>
+          </ul>
+          <div class="tcard-links">
+            <a class="tlink" href="https://www.qualydentgold.com.br/odontologia-estetica/" target="_blank" rel="noopener">Conhecer o tratamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <button class="btn btn-ghost js-agendar" type="button">Quero realizar minhas facetas</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Ortodontia -->
+      <article class="tcard rv">
+        <div class="tcard-img">
+          <span class="tcard-tag">Alinhamento</span>
+          <img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Ortodontia-1024x695.png" alt="Ortodontia na QualyDent Gold" loading="lazy">
+        </div>
+        <div class="tcard-body">
+          <h3><em>Ortodontia</em></h3>
+          <p>Alinhamento, função e saúde do sorriso. Nosso foco vai além de alinhar dentes: cuidamos da função da mordida, da estética do sorriso e da saúde bucal como um todo.</p>
+          <ul class="tlist">
+            <li>Planejamento individualizado para crianças, adolescentes e adultos</li>
+            <li>Avaliação de cada fase do desenvolvimento</li>
+            <li>Previne desgaste, dificuldade de higiene e dores na articulação</li>
+          </ul>
+          <div class="tcard-links">
+            <a class="tlink" href="https://www.qualydentgold.com.br/ortodontia/" target="_blank" rel="noopener">Conhecer o tratamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <button class="btn btn-ghost js-agendar" type="button">Quero cuidar do meu sorriso</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Odontopediatria -->
+      <article class="tcard rv">
+        <div class="tcard-img">
+          <span class="tcard-tag">Infantil</span>
+          <img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Odontopediatria-1024x696.png" alt="Odontopediatria na QualyDent Gold" loading="lazy">
+        </div>
+        <div class="tcard-body">
+          <h3><em>Odontopediatria</em></h3>
+          <p>Cuidado com o sorriso do seu filho. Somos responsáveis pelo cuidado da saúde bucal de bebês, crianças e adolescentes.</p>
+          <ul class="tlist">
+            <li>Acompanhamento do desenvolvimento da boca, da mastigação e da dentição</li>
+            <li>Identificação precoce de hábitos que prejudicam o desenvolvimento bucal</li>
+            <li>Técnicas adequadas para cada fase e atendimento humanizado</li>
+          </ul>
+          <div class="tcard-links">
+            <a class="tlink" href="https://www.qualydentgold.com.br/odontopediatria/" target="_blank" rel="noopener">Conhecer o tratamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <button class="btn btn-ghost js-agendar" type="button">Quero consultar com a odontopediatra</button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="also rv">
+      <h4>Também cuidamos de</h4>
+      <div class="chips">
+        <button class="chip js-agendar" type="button">Consulta odontológica</button>
+        <button class="chip js-agendar" type="button">Endodontia</button>
+        <button class="chip js-agendar" type="button">Facetas em resina</button>
+        <button class="chip js-agendar" type="button">Facetas em porcelana</button>
+        <button class="chip js-agendar" type="button">Aparelho fixo metálico</button>
+        <button class="chip js-agendar" type="button">Próteses</button>
+        <button class="chip js-agendar" type="button">Clareamento dental</button>
+      </div>
+    </div>
+
+    <!-- CTA centralizado -->
+    <div class="t-cta rv">
+      <p>Não encontrou o que procurava? Conte pra gente o que você precisa e a equipe indica o melhor caminho.</p>
+      <button class="btn btn-gold btn-lg js-agendar" type="button">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.16c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.98-.32-1.69-.62-2.97-1.28-4.91-4.27-5.06-4.47-.15-.2-1.21-1.61-1.21-3.07 0-1.46.77-2.18 1.04-2.48.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.42-.07.66.5.25.6.84 2.06.91 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.36 1.46.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.66-.15.27.1 1.71.81 2 .96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
         Fale com a gente
       </button>
     </div>
   </div>
 </section>
 
-<!-- ============ EQUIPE ============ -->
-<section class="section section-cream2" id="equipe">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Corpo Clínico</p>
-      <h2 class="section-title">Quem realiza sua <em>transformação</em></h2>
-      <p class="lede">Uma equipe com mais de 35 anos de excelência em odontologia, unida por um único propósito: alcançar a autoestima e o sorriso perfeito de cada paciente, com segurança, planejamento e resultados naturais.</p>
+<!-- ============================================================
+     BLOCO 5 — CORPO CLÍNICO
+============================================================ -->
+<section class="section team" id="equipe">
+  <div class="wrap">
+    <div class="rv" style="max-width:64ch">
+      <span class="eyebrow">Corpo clínico</span>
+      <h2 class="title">Uma equipe com mais de 35 anos de <span class="gold">excelência</span></h2>
+      <p class="lead">Uma clínica que te acolhe, te entende e te transmite confiança. Tudo o que você precisa para sua saúde ou estética bucal, você encontra na QualyDent.</p>
     </div>
-
-    <div class="team-lead reveal">
-      <div class="team-lead-media">
-        <img src="assets/img/team/adriano.jpg" alt="Dr. Adriano, cirurgião-dentista. Especialista em implantodontia, mestre em Odontologia e fundador da QualyDent Gold. Com mais de 33 anos de experiência e mais de 20.000 pacientes atendidos, tornou-se referência em implantes e facetas em resina. Sua trajetória é marcada por técnica, confiança e resultados que transformam sorrisos com naturalidade e segurança." loading="lazy">
-      </div>
-      <div class="team-lead-cap">
-        <span class="team-lead-badge">Fundador da QualyDent Gold</span>
-        <span>Mestre em Odontologia · +33 anos de experiência · +20.000 pacientes atendidos</span>
-      </div>
-    </div>
-
-    <div class="team-grid reveal-stagger">
-      <div class="team-card">
-        <div class="team-card-media">
-          <img src="assets/img/team/dra-leticia.jpg" alt="Dra. Letícia Furtado, cirurgiã-dentista com atuação em implantodontia, prótese e clareamento dental. Reconhecida pelo cuidado minucioso e pelo olhar estético apurado, alia técnica, sensibilidade e planejamento para entregar resultados funcionais e naturais." loading="lazy">
-        </div>
-        <div class="team-card-cap"><b>Implantodontia · Prótese · Clareamento</b></div>
-      </div>
-      <div class="team-card">
-        <div class="team-card-media">
-          <img src="assets/img/team/dra-larissa.jpg" alt="Dra. Larissa Sturcio, cirurgiã-dentista com atuação em facetas em resina, clareamento e reabilitação oral. Trabalho focado em devolver harmonia ao sorriso com planejamento cuidadoso e estética natural." loading="lazy">
-        </div>
-        <div class="team-card-cap"><b>Facetas · Clareamento · Reabilitação oral</b></div>
-      </div>
-      <div class="team-card">
-        <div class="team-card-media">
-          <img src="assets/img/team/rayanne.jpg" alt="Dra. Rayanne, cirurgiã-dentista com atuação em odontopediatria e endodontia, dedicada ao cuidado da saúde bucal desde a infância até tratamentos que preservam o dente natural." loading="lazy">
-        </div>
-        <div class="team-card-cap"><b>Odontopediatria · Endodontia</b></div>
-      </div>
-      <div class="team-card">
-        <div class="team-card-media">
-          <img src="assets/img/team/eduarda.jpg" alt="Dra. Eduarda, cirurgiã-dentista com atuação em ortodontia, dedicada ao alinhamento e à harmonia do sorriso, respeitando a estética facial e a função mastigatória de cada paciente." loading="lazy">
-        </div>
-        <div class="team-card-cap"><b>Ortodontia</b></div>
-      </div>
+    <div class="team-grid">
+      <article class="pcard rv">
+        <div class="pcard-img"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Adriano-1.png" alt="Dr. Adriano" loading="lazy"></div>
+        <div class="pcard-body"><b>Dr. Adriano</b><small>Fundador · Mestre em Odontologia</small></div>
+      </article>
+      <article class="pcard rv">
+        <div class="pcard-img"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Dra-Leticia-1.png" alt="Dra. Letícia" loading="lazy"></div>
+        <div class="pcard-body"><b>Dra. Letícia</b><small>Corpo clínico QualyDent</small></div>
+      </article>
+      <article class="pcard rv">
+        <div class="pcard-img"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Dra-Larissa-1.png" alt="Dra. Larissa" loading="lazy"></div>
+        <div class="pcard-body"><b>Dra. Larissa</b><small>Corpo clínico QualyDent</small></div>
+      </article>
+      <article class="pcard rv">
+        <div class="pcard-img"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Eduarda-1.png" alt="Dra. Eduarda" loading="lazy"></div>
+        <div class="pcard-body"><b>Dra. Eduarda</b><small>Corpo clínico QualyDent</small></div>
+      </article>
+      <article class="pcard rv">
+        <div class="pcard-img"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Rayanne.png" alt="Dra. Rayanne" loading="lazy"></div>
+        <div class="pcard-body"><b>Dra. Rayanne</b><small>Corpo clínico QualyDent</small></div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ============ OFERTAS ============ -->
-<section class="section section-dark" id="ofertas">
-  <div class="container">
-    <div class="section-head center reveal">
-      <p class="eyebrow" style="justify-content:center">Como continuar cuidando de você</p>
-      <h2 class="section-title">Escolha o <em>ritmo</em> da sua manutenção</h2>
-      <p class="lede">Da sessão pontual ao acompanhamento contínuo do seu sorriso e da sua harmonização facial. Valores sob consulta, com condições facilitadas de pagamento.</p>
+<!-- ============================================================
+     BLOCO 6 — DEPOIMENTOS / PROVA SOCIAL
+============================================================ -->
+<section class="section" id="depoimentos">
+  <div class="wrap">
+    <div class="rv" style="max-width:66ch;margin-bottom:clamp(28px,3.4vw,46px)">
+      <span class="eyebrow">Transformações em palavras</span>
+      <h2 class="title">O que dizem <span class="gold">sobre nós</span></h2>
+      <p class="lead">Depoimentos que vão além dos tratamentos e revelam resultados genuínos: histórias de vidas impactadas, de sorrisos que voltaram a prosperar e de pacientes que recuperaram a confiança.</p>
     </div>
 
-    <div class="offer-grid reveal-stagger">
-      <div class="offer-card">
-        <p class="offer-kicker">Sem recorrência</p>
-        <h3>Sessão Avulsa</h3>
-        <p class="offer-note">Ideal para conhecer a QualyDent Gold ou fazer uma manutenção pontual</p>
-        <p class="offer-price">Valor sob consulta</p>
-        <ul class="offer-list">
-          <li><svg><use href="#i-check"/></svg> Avaliação completa com a equipe QualyDent Gold</li>
-          <li><svg><use href="#i-check"/></svg> Indicada para o primeiro contato com a clínica</li>
-          <li><svg><use href="#i-check"/></svg> Sem compromisso de recorrência</li>
-          <li><svg><use href="#i-check"/></svg> Pagamento facilitado, inclusive parcelado</li>
-        </ul>
-        <button class="btn btn-ghost btn-block" style="color:var(--cream)" data-wa-open data-wa-title="Sessão Avulsa" data-wa-message="Olá! Vim pelo site da QualyDent Gold e gostaria de saber o valor da sessão avulsa.">
-          Consultar valor
-        </button>
+    <div class="rate-row rv">
+      <div class="rate">
+        <span class="score">5,0</span>
+        <div class="meta">
+          <span class="stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </span>
+          <b>Unidade Rio do Sul</b>
+          <small>Avaliações no Google</small>
+        </div>
       </div>
+      <div class="rate">
+        <span class="score">5,0</span>
+        <div class="meta">
+          <span class="stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </span>
+          <b>Unidade Otacílio Costa</b>
+          <small>Avaliações no Google</small>
+        </div>
+      </div>
+    </div>
 
-      <div class="offer-card is-featured">
-        <span class="offer-flag">Mais procurado</span>
-        <p class="offer-kicker">Manutenção trimestral</p>
-        <h3>Plano 90 dias</h3>
-        <p class="offer-note">Acompanhamento contínuo do seu sorriso e da sua harmonização facial</p>
-        <p class="offer-price">Condições especiais sob consulta</p>
-        <ul class="offer-list">
-          <li><svg><use href="#i-check"/></svg> Acompanhamento a cada 90 dias, nas duas unidades</li>
-          <li><svg><use href="#i-check"/></svg> Prioridade de agenda</li>
-          <li><svg><use href="#i-check"/></svg> Resultados mantidos com constância</li>
-          <li><svg><use href="#i-check"/></svg> Condições especiais para quem fecha o plano</li>
-        </ul>
-        <button class="btn btn-gold btn-block" data-wa-open data-wa-title="Plano 90 dias" data-wa-message="Olá! Vim pelo site da QualyDent Gold e gostaria de saber mais sobre o plano de manutenção de 90 dias.">
-          Quero este plano
-        </button>
-      </div>
+    <div class="vid-grid">
+      <figure class="vid rv"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Capa-Maria-Dolores.png" alt="Depoimento de Maria Dolores" loading="lazy"><figcaption>Maria Dolores<small>Depoimento em vídeo</small></figcaption></figure>
+      <figure class="vid rv"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Capa-Depoimento-Doraci.png" alt="Depoimento de Doraci" loading="lazy"><figcaption>Doraci<small>Depoimento em vídeo</small></figcaption></figure>
+      <figure class="vid rv"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Capa-Depoimento-Liamara.png" alt="Depoimento de Liamara" loading="lazy"><figcaption>Liamara<small>Depoimento em vídeo</small></figcaption></figure>
+      <figure class="vid rv"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Capa-Depoimento-Terezinha.png" alt="Depoimento de Terezinha" loading="lazy"><figcaption>Terezinha<small>Depoimento em vídeo</small></figcaption></figure>
+    </div>
 
-      <div class="offer-card">
-        <p class="offer-kicker">Manutenção semestral</p>
-        <h3>Plano 180 dias</h3>
-        <p class="offer-note">Melhor custo-benefício para quem já é paciente QualyDent Gold</p>
-        <p class="offer-price">Condições especiais sob consulta</p>
-        <ul class="offer-list">
-          <li><svg><use href="#i-check"/></svg> Protocolo semestral de manutenção</li>
-          <li><svg><use href="#i-check"/></svg> Melhor custo por sessão ao longo do ano</li>
-          <li><svg><use href="#i-check"/></svg> Acompanhamento próximo da equipe clínica</li>
-          <li><svg><use href="#i-check"/></svg> Ideal para resultados já conquistados</li>
-        </ul>
-        <button class="btn btn-ghost btn-block" style="color:var(--cream)" data-wa-open data-wa-title="Plano 180 dias" data-wa-message="Olá! Vim pelo site da QualyDent Gold e gostaria de saber mais sobre o plano de manutenção de 180 dias.">
-          Consultar condições
-        </button>
-      </div>
+    <div class="rv" style="display:flex;justify-content:center;margin-top:clamp(24px,3vw,38px)">
+      <a class="btn btn-ghost btn-lg" href="https://linktr.ee/QualyDentGoldGoogle" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Ver avaliações no Google
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ============ PROVA SOCIAL ============ -->
-<section class="section section-cream" id="depoimentos">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Prova social</p>
-      <h2 class="section-title">O que dizem <em>sobre nós</em></h2>
-      <p class="lede">Avaliações reais de pacientes das duas unidades, direto do Google.</p>
-      <div class="rating-row">
-        <div class="rating-pill"><span class="g">G</span><span><b>5,0 <span class="stars">★★★★★</span></b><span>Rio do Sul · 65 avaliações</span></span></div>
-        <div class="rating-pill"><span class="g">G</span><span><b>5,0 <span class="stars">★★★★★</span></b><span>Otacílio Costa · 3 avaliações</span></span></div>
+<!-- ============================================================
+     BLOCO 7 — INSTAGRAM
+============================================================ -->
+<section class="section ig">
+  <div class="wrap">
+    <div class="ig-head rv">
+      <div>
+        <span class="eyebrow">@qualydentgold</span>
+        <h2 class="title" style="font-size:clamp(1.7rem,3.4vw,2.6rem);margin-bottom:.35em">Cada sorriso conta uma <span class="gold">história</span></h2>
+        <p class="lead">Acompanhe bastidores, resultados e novidades das duas unidades.</p>
       </div>
+      <a class="btn btn-ghost" href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+        Seguir no Instagram
+      </a>
     </div>
-
-    <div class="review-grid reveal-stagger">
-      <div class="review-card">
-        <span class="stars">★★★★★</span>
-        <p>"Atendimento excelente da Dra. Letícia e de toda a equipe. Cuidado em cada detalhe dos procedimentos e com a nossa realização. Minha clínica da vida!"</p>
-        <div class="review-who"><span class="review-avatar">B</span><span><b>Bruna R.</b><span>Google · Rio do Sul</span></span></div>
-      </div>
-      <div class="review-card">
-        <span class="stars">★★★★★</span>
-        <p>"Trabalho excelente, todos da minha casa são pacientes e estão muito contentes! Podem confiar de olhos fechados."</p>
-        <div class="review-who"><span class="review-avatar">K</span><span><b>Kathllen C.</b><span>Google · Rio do Sul</span></span></div>
-      </div>
-      <div class="review-card">
-        <span class="stars">★★★★★</span>
-        <p>"A clínica é maravilhosa. Desde o atendimento da recepcionista Agatha, que é nota mil, até aos outros profissionais."</p>
-        <div class="review-who"><span class="review-avatar">I</span><span><b>Isa P.</b><span>Google · Rio do Sul</span></span></div>
-      </div>
-      <div class="review-card">
-        <span class="stars">★★★★★</span>
-        <p>"Excelente profissional e tratamento."</p>
-        <div class="review-who"><span class="review-avatar">A</span><span><b>Adair S.</b><span>Google · Otacílio Costa</span></span></div>
-      </div>
-      <div class="review-card">
-        <span class="stars">★★★★★</span>
-        <p>"Excelente trabalho!"</p>
-        <div class="review-who"><span class="review-avatar">M</span><span><b>Matheus C.</b><span>Google · Otacílio Costa</span></span></div>
-      </div>
-      <div class="review-card" style="justify-content:center;align-items:flex-start;background:var(--ink);">
-        <span class="script-line">Cada sorriso conta uma história. Faça a sua brilhar.</span>
-      </div>
-    </div>
-
-    <div class="ig-strip reveal">
-      <div class="ig-strip-head">
-        <h4>Acompanhe no Instagram</h4>
-        <a class="treat-link" href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener">
-          @qualydentgold <svg><use href="#i-arrow"/></svg>
-        </a>
-      </div>
-      <div class="ig-track">
-        <a href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener"><img src="assets/img/testimonials/depoimento-1.jpg" alt="Publicação do Instagram da QualyDent Gold sobre cuidados de higiene bucal" loading="lazy"></a>
-        <a href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener"><img src="assets/img/testimonials/depoimento-2.jpg" alt="Publicação do Instagram da QualyDent Gold" loading="lazy"></a>
-        <a href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener"><img src="assets/img/testimonials/depoimento-3.jpg" alt="Publicação do Instagram da QualyDent Gold sobre prótese dentária" loading="lazy"></a>
-        <a href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener"><img src="assets/img/testimonials/depoimento-4.jpg" alt="Publicação do Instagram da QualyDent Gold" loading="lazy"></a>
-        <a href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener"><img src="assets/img/testimonials/depoimento-5.jpg" alt="Publicação do Instagram da QualyDent Gold" loading="lazy"></a>
-      </div>
+    <div class="ig-grid rv">
+      <a href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Facetas-em-Resina-1024x695.png" alt="Facetas em resina" loading="lazy"></a>
+      <a href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Consulta-Odontologica-1024x695.png" alt="Consulta odontológica" loading="lazy"></a>
+      <a href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Aparelho-fixo-metalico-1024x695.png" alt="Aparelho fixo metálico" loading="lazy"></a>
+      <a href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Endodontia-1024x696.png" alt="Endodontia" loading="lazy"></a>
+      <a href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Agrupar-9-1.png" alt="QualyDent Gold" loading="lazy"></a>
     </div>
   </div>
 </section>
 
-<!-- ============ CLÍNICAS ============ -->
-<section class="section section-cream2" id="clinicas">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Nossas Clínicas</p>
-      <h2 class="section-title">Duas casas, o mesmo <em>padrão de excelência</em></h2>
-      <p class="lede">Estruturas modernas, tecnologia avançada e uma equipe preparada para oferecer o mesmo cuidado em cada atendimento — onde for mais perto de você.</p>
+<!-- ============================================================
+     BLOCO 8 — CLÍNICAS
+============================================================ -->
+<section class="section" id="clinicas">
+  <div class="wrap">
+    <div class="rv" style="max-width:64ch">
+      <span class="eyebrow">Nossas unidades</span>
+      <h2 class="title">Duas casas, o mesmo <span class="gold">padrão de excelência</span></h2>
+      <p class="lead">Unidades em Rio do Sul e Otacílio Costa, com estruturas modernas e tecnologia avançada.</p>
     </div>
 
-    <div class="clinic-grid reveal-stagger">
-      <article class="clinic-card">
-        <div class="clinic-media"><img src="assets/img/clinics/rio-do-sul-cover.jpg" alt="Fachada da QualyDent Gold em Rio do Sul" loading="lazy"></div>
+    <div class="cl-grid">
+      <article class="clinic rv">
+        <div class="clinic-img">
+          <span class="clinic-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            5,0 no Google
+          </span>
+          <img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Clinica-1.png" alt="Unidade QualyDent Gold em Rio do Sul" loading="lazy">
+        </div>
         <div class="clinic-body">
-          <div class="rating-pill"><span class="g">G</span><span><b>5,0 <span class="stars">★★★★★</span></b><span>65 avaliações no Google</span></span></div>
           <h3>Rio do Sul</h3>
-          <div class="clinic-row"><svg><use href="#i-pin"/></svg><span>Alameda Aristiliano Ramos, 539 – Centro, Rio do Sul – SC, 89160-000</span></div>
-          <div class="clinic-row"><svg><use href="#i-wa"/></svg><span>(47) 3521-1777</span></div>
-          <div class="clinic-actions">
-            <a class="btn btn-gold btn-sm" href="#" data-wa-direct="riodosul" data-wa-message="Olá! Gostaria de agendar uma consulta na unidade QualyDent Gold Rio do Sul.">
-              <svg><use href="#i-wa"/></svg> Agendar nesta unidade
-            </a>
-            <a class="btn btn-line btn-sm" style="color:var(--ink)" href="https://www.google.com/maps/search/?api=1&amp;query=Alameda+Aristiliano+Ramos%2C+539+-+Centro%2C+Rio+do+Sul+-+SC" target="_blank" rel="noopener">
-              <svg><use href="#i-pin"/></svg> Como chegar
-            </a>
+          <p style="color:var(--txt-dim);font-size:.94rem">Estrutura moderna, tecnologia avançada e uma equipe preparada para realizar tratamentos odontológicos completos.</p>
+          <ul class="info">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10Z"/><circle cx="12" cy="11" r="2.4"/></svg><span>Alameda Aristiliano Ramos, 539 — Centro<br>Rio do Sul / SC · CEP 89160-000</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><a href="tel:+554735211777">(47) 3521-1777</a></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg><span>Atendimento com hora marcada — agende pelo WhatsApp</span></li>
+          </ul>
+          <div class="map"><iframe title="Mapa da unidade Rio do Sul" loading="lazy" src="https://maps.google.com/maps?q=Alameda%20Aristiliano%20Ramos%2C%20539%20-%20Centro%2C%20Rio%20do%20Sul%20-%20SC&t=m&z=16&output=embed&iwloc=near"></iframe></div>
+          <div class="clinic-cta">
+            <a class="btn btn-gold" href="https://tintim.link/whatsapp/98473217-b7aa-4608-8ccd-ff98f8e7b892/57076c77-3150-4aa9-bf55-e8fffea6e5b8" target="_blank" rel="noopener">Agendar em Rio do Sul</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Alameda+Aristiliano+Ramos,+539+-+Centro,+Rio+do+Sul+-+SC" target="_blank" rel="noopener">Como chegar</a>
           </div>
         </div>
       </article>
 
-      <article class="clinic-card">
-        <div class="clinic-media"><img src="assets/img/clinics/agrupar-8.jpg" alt="Consultório da QualyDent Gold, ambiente com acabamento em mármore" loading="lazy"></div>
+      <article class="clinic rv">
+        <div class="clinic-img">
+          <span class="clinic-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            5,0 no Google
+          </span>
+          <img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Clinica-2-2.png" alt="Unidade QualyDent Gold em Otacílio Costa" loading="lazy">
+        </div>
         <div class="clinic-body">
-          <div class="rating-pill"><span class="g">G</span><span><b>5,0 <span class="stars">★★★★★</span></b><span>3 avaliações no Google</span></span></div>
           <h3>Otacílio Costa</h3>
-          <div class="clinic-row"><svg><use href="#i-pin"/></svg><span>Rua São José, 68 – Centro, Otacílio Costa – SC, 88540-000</span></div>
-          <div class="clinic-row"><svg><use href="#i-wa"/></svg><span>(49) 99938-9545</span></div>
-          <div class="clinic-actions">
-            <a class="btn btn-gold btn-sm" href="#" data-wa-direct="otacilio" data-wa-message="Olá! Gostaria de agendar uma consulta na unidade QualyDent Gold Otacílio Costa.">
-              <svg><use href="#i-wa"/></svg> Agendar nesta unidade
-            </a>
-            <a class="btn btn-line btn-sm" style="color:var(--ink)" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+S%C3%A3o+Jos%C3%A9%2C+68+-+Centro%2C+Otac%C3%ADlio+Costa+-+SC" target="_blank" rel="noopener">
-              <svg><use href="#i-pin"/></svg> Como chegar
-            </a>
+          <p style="color:var(--txt-dim);font-size:.94rem">Atendimento acolhedor, eficiente e de alto padrão, com a mesma estrutura de tecnologia da matriz.</p>
+          <ul class="info">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10Z"/><circle cx="12" cy="11" r="2.4"/></svg><span>Rua São José, 68 — Sala 102, Centro<br>Otacílio Costa / SC · CEP 88540-000</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><a href="tel:+554999389545">(49) 99938-9545</a></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg><span>Atendimento com hora marcada — agende pelo WhatsApp</span></li>
+          </ul>
+          <div class="map"><iframe title="Mapa da unidade Otacílio Costa" loading="lazy" src="https://maps.google.com/maps?q=Rua%20S%C3%A3o%20Jos%C3%A9%2C%2068%20-%20Centro%2C%20Otac%C3%ADlio%20Costa%20-%20SC&t=m&z=16&output=embed&iwloc=near"></iframe></div>
+          <div class="clinic-cta">
+            <a class="btn btn-gold" href="https://tintim.link/whatsapp/e62810bb-f942-4c9d-bf85-c2b9872aa828/10d900f6-f779-49a2-b950-5dcca86b1215" target="_blank" rel="noopener">Agendar em Otacílio Costa</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+S%C3%A3o+Jos%C3%A9,+68+-+Centro,+Otac%C3%ADlio+Costa+-+SC" target="_blank" rel="noopener">Como chegar</a>
           </div>
         </div>
       </article>
     </div>
+  </div>
+</section>
 
-    <div class="ig-strip reveal">
-      <div class="ig-strip-head"><h4>Conheça o espaço QualyDent Gold</h4></div>
-      <div class="ig-track">
-        <a href="#clinicas" style="width:220px" aria-hidden="true" tabindex="-1"><img src="assets/img/clinics/clinica-2.jpg" alt="Recepção da QualyDent Gold, com marcenaria em tons dourados" loading="lazy"></a>
-        <a href="#clinicas" style="width:220px" aria-hidden="true" tabindex="-1"><img src="assets/img/clinics/clinica-3.jpg" alt="Espelho de selfie em formato de dente, com iluminação de neon" loading="lazy"></a>
-        <a href="#clinicas" style="width:220px" aria-hidden="true" tabindex="-1"><img src="assets/img/clinics/agrupar-9.jpg" alt="Letreiro de neon com a frase: cada sorriso conta uma história, faça a sua brilhar" loading="lazy"></a>
-        <a href="#clinicas" style="width:220px" aria-hidden="true" tabindex="-1"><img src="assets/img/clinics/ambiente.jpg" alt="Corredor da clínica com retratos da equipe QualyDent Gold" loading="lazy"></a>
-      </div>
+<!-- ============================================================
+     BLOCO 9 — CONHEÇA O ESPAÇO
+============================================================ -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv" style="max-width:56ch">
+      <span class="eyebrow">Conheça o espaço</span>
+      <h2 class="title" style="font-size:clamp(1.7rem,3.4vw,2.6rem)">Um ambiente pensado para o seu <span class="gold">conforto</span></h2>
+    </div>
+    <div class="gal rv">
+      <figure class="wide tall"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/QualyDent-Ambiente.00_00_29_16.Quadro003.png" alt="Ambiente da clínica QualyDent Gold" loading="lazy"></figure>
+      <figure><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Clinica-3-2.png" alt="Recepção da clínica" loading="lazy"></figure>
+      <figure><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Clinica-1.png" alt="Interior da clínica" loading="lazy"></figure>
+      <figure class="wide"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Clinica-2-2.png" alt="Consultório QualyDent Gold" loading="lazy"></figure>
     </div>
   </div>
 </section>
 
-<!-- ============ FAQ ============ -->
-<section class="section section-dark" id="duvidas">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Perguntas frequentes</p>
-      <h2 class="section-title">Principais <em>dúvidas</em></h2>
-    </div>
-
-    <div class="faq-list reveal">
-      <div class="faq-mini-item faq-item">
-        <button class="faq-mini-q" aria-expanded="false">Quais os principais serviços da QualyDent?<span class="plus"></span></button>
-        <div class="faq-mini-a"><div class="faq-mini-a-inner">A QualyDent oferece tratamentos completos para cuidar de todas as etapas do seu sorriso, como implantes dentários, próteses, ortodontia, lentes e facetas, clareamento dental e outros tratamentos estéticos e funcionais — sempre com planejamento individualizado e tecnologia avançada.</div></div>
-      </div>
-      <div class="faq-mini-item faq-item">
-        <button class="faq-mini-q" aria-expanded="false">Onde ficam localizadas as unidades da QualyDent?<span class="plus"></span></button>
-        <div class="faq-mini-a"><div class="faq-mini-a-inner">A QualyDent possui unidades em Rio do Sul e Otacílio Costa (SC), com estruturas modernas, tecnologia avançada e uma equipe preparada para oferecer o mesmo padrão de cuidado e excelência em cada atendimento.</div></div>
-      </div>
-      <div class="faq-mini-item faq-item">
-        <button class="faq-mini-q" aria-expanded="false">Qual o corpo clínico da QualyDent?<span class="plus"></span></button>
-        <div class="faq-mini-a"><div class="faq-mini-a-inner">O corpo clínico é formado pelo Dr. Adriano, Dra. Letícia, Dra. Larissa, Dra. Eduarda e Dra. Rayanne. Todos atuam com alto padrão técnico e atualização constante, com o mesmo objetivo: a autoestima e o sorriso perfeito de cada paciente.</div></div>
-      </div>
-      <div class="faq-mini-item faq-item">
-        <button class="faq-mini-q" aria-expanded="false">Há quanto tempo existe a QualyDent?<span class="plus"></span></button>
-        <div class="faq-mini-a"><div class="faq-mini-a-inner">A QualyDent carrega mais de 35 anos de excelência em odontologia. A clínica é guiada pelo Dr. Adriano, mestre em Odontologia, e pela Dra. Letícia, que juntos lideram a equipe com visão clínica, experiência e compromisso com resultados de alto padrão.</div></div>
+<!-- ============================================================
+     BLOCO 10 — DÚVIDAS
+============================================================ -->
+<section class="section faq" id="duvidas">
+  <div class="wrap faq-grid">
+    <div class="rv">
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2 class="title">Principais <span class="gold">dúvidas</span></h2>
+      <p class="lead">Se a sua pergunta não estiver aqui, é só chamar no WhatsApp — a equipe responde rapidinho.</p>
+      <div class="faq-side" style="margin-top:2rem">
+        <h3>Ainda com dúvidas?</h3>
+        <p>Cada tratamento tem uma página com as principais perguntas respondidas pela nossa equipe.</p>
+        <ul class="info" style="margin-bottom:1.3rem">
+          <li><a href="https://www.qualydentgold.com.br/implante-dentario/" target="_blank" rel="noopener">Dúvidas sobre implante dentário</a></li>
+          <li><a href="https://www.qualydentgold.com.br/odontologia-estetica/" target="_blank" rel="noopener">Dúvidas sobre facetas e estética</a></li>
+          <li><a href="https://www.qualydentgold.com.br/ortodontia/" target="_blank" rel="noopener">Dúvidas sobre ortodontia</a></li>
+          <li><a href="https://www.qualydentgold.com.br/odontopediatria/" target="_blank" rel="noopener">Dúvidas sobre odontopediatria</a></li>
+        </ul>
+        <button class="btn btn-gold btn-block js-agendar" type="button">Falar com a equipe</button>
       </div>
     </div>
 
-    <div class="final-cta reveal" style="margin-top:80px;">
-      <span class="script-line">Cada sorriso conta uma história.</span>
-      <h2>Faça a sua brilhar.</h2>
-      <p>Fale agora com a QualyDent Gold pelo WhatsApp e agende sua consulta na unidade mais próxima de você.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-gold" href="#" data-wa-direct="riodosul" data-wa-message="Olá! Encontrei o site da QualyDent Gold e gostaria de agendar uma consulta em Rio do Sul.">
-          <svg><use href="#i-wa"/></svg> Rio do Sul
-        </a>
-        <a class="btn btn-line" href="#" data-wa-direct="otacilio" data-wa-message="Olá! Encontrei o site da QualyDent Gold e gostaria de agendar uma consulta em Otacílio Costa.">
-          <svg><use href="#i-wa"/></svg> Otacílio Costa
-        </a>
-      </div>
+    <div class="acc rv">
+      <details open>
+        <summary>Quais os principais serviços da QualyDent?</summary>
+        <div class="ans">A QualyDent oferece tratamentos completos para cuidar de todas as etapas do seu sorriso, como implantes dentários, próteses, ortodontia, lentes e facetas, clareamento dental e outros tratamentos estéticos e funcionais.</div>
+      </details>
+      <details>
+        <summary>Onde ficam localizadas as sedes da QualyDent?</summary>
+        <div class="ans">A QualyDent possui unidades em Rio do Sul e Otacílio Costa, com estruturas modernas e tecnologia avançada.</div>
+      </details>
+      <details>
+        <summary>Qual o corpo clínico da QualyDent?</summary>
+        <div class="ans">O corpo clínico da QualyDent é formado pelos profissionais Dr. Adriano, Dra. Letícia, Dra. Larissa, Dra. Eduarda e Dra. Rayanne.</div>
+      </details>
+      <details>
+        <summary>Há quanto tempo existe a QualyDent?</summary>
+        <div class="ans">A QualyDent carrega mais de 35 anos de excelência em odontologia, construindo uma trajetória sólida baseada em confiança, técnica e cuidado.</div>
+      </details>
+      <details>
+        <summary>Como faço para agendar uma consulta?</summary>
+        <div class="ans">O agendamento é feito pelo WhatsApp da unidade que você preferir. Basta clicar em qualquer botão de agendamento desta página e escolher entre Rio do Sul ou Otacílio Costa.</div>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/img/brand/logo-branco-sm.png" alt="QualyDent Gold">
-        <p>Uma clínica que te acolhe, te entende e te transmite confiança. Tudo o que você precisa para sua saúde ou estética bucal, você encontra na QualyDent.</p>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener" aria-label="Instagram da QualyDent Gold"><svg><use href="#i-insta"/></svg></a>
-          <a href="https://www.facebook.com/p/QualyDent-Clinica-Odontol%C3%B3gica-100068423223646/" target="_blank" rel="noopener" aria-label="Facebook da QualyDent Gold"><svg><use href="#i-fb"/></svg></a>
-          <a href="mailto:qualydent@qualydentgold.com.br" aria-label="E-mail da QualyDent Gold"><svg><use href="#i-mail"/></svg></a>
+<!-- ============================================================
+     BLOCO 11 — CTA FINAL
+============================================================ -->
+<section class="section final">
+  <div class="wrap final-in rv">
+    <span class="eyebrow">Vamos começar?</span>
+    <h2>Cada sorriso conta uma história. Faça a sua <span class="gold">brilhar</span>.</h2>
+    <p>Agende sua avaliação pelo WhatsApp e comece sua jornada com quem cuida de sorrisos em Santa Catarina há mais de 35 anos.</p>
+    <div class="row">
+      <a class="btn btn-gold btn-lg" href="https://tintim.link/whatsapp/98473217-b7aa-4608-8ccd-ff98f8e7b892/57076c77-3150-4aa9-bf55-e8fffea6e5b8" target="_blank" rel="noopener">Quero renovar meu sorriso — Rio do Sul</a>
+      <a class="btn btn-ghost btn-lg" href="https://tintim.link/whatsapp/e62810bb-f942-4c9d-bf85-c2b9872aa828/10d900f6-f779-49a2-b950-5dcca86b1215" target="_blank" rel="noopener">Quero renovar meu sorriso — Otacílio Costa</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BLOCO 12 — RODAPÉ
+============================================================ -->
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div class="ftr-brand">
+        <a href="#topo" class="brand">
+          <img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Logo-qualy-degrade-fund-preto-300x300.png" alt="QualyDent Gold">
+          <b>QualyDent <span>Gold</span></b>
+        </a>
+        <p>Uma clínica que te acolhe, te entende e te transmite confiança. Tudo o que você precisa para sua saúde ou estética bucal.</p>
+        <div class="social">
+          <a href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/p/QualyDent-Clinica-Odontol%C3%B3gica-100068423223646/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.5l.5-3H13v-2c0-.6.4-1 1-1Z"/></svg></a>
+          <a href="mailto:qualydent@qualydentgold.com.br" aria-label="E-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></a>
         </div>
       </div>
 
-      <div class="footer-col">
+      <div>
         <h5>Tratamentos</h5>
         <ul>
-          <li><a href="#implante">Implante Dentário</a></li>
-          <li><a href="#estetica">Odontologia Estética</a></li>
-          <li><a href="#ortodontia">Ortodontia</a></li>
-          <li><a href="#odontopediatria">Odontopediatria</a></li>
+          <li><a href="https://www.qualydentgold.com.br/implante-dentario/" target="_blank" rel="noopener">Implante dentário</a></li>
+          <li><a href="https://www.qualydentgold.com.br/odontologia-estetica/" target="_blank" rel="noopener">Odontologia estética</a></li>
+          <li><a href="https://www.qualydentgold.com.br/ortodontia/" target="_blank" rel="noopener">Ortodontia</a></li>
+          <li><a href="https://www.qualydentgold.com.br/odontopediatria/" target="_blank" rel="noopener">Odontopediatria</a></li>
+          <li><a href="#tratamentos">Todos os tratamentos</a></li>
         </ul>
       </div>
 
-      <div class="footer-col">
+      <div>
         <h5>Unidades</h5>
         <ul>
-          <li>Rio do Sul<br>Alameda Aristiliano Ramos, 539 – Centro<br>(47) 3521-1777</li>
-          <li style="margin-top:6px">Otacílio Costa<br>Rua São José, 68 – Centro<br>(49) 99938-9545</li>
+          <li><strong style="color:var(--txt);font-weight:600">Rio do Sul</strong><br>Alameda Aristiliano Ramos, 539 — Centro<br><a href="tel:+554735211777">(47) 3521-1777</a></li>
+          <li style="margin-top:.5rem"><strong style="color:var(--txt);font-weight:600">Otacílio Costa</strong><br>Rua São José, 68 — Sala 102, Centro<br><a href="tel:+554999389545">(49) 99938-9545</a></li>
         </ul>
       </div>
 
-      <div class="footer-col">
+      <div>
         <h5>QualyDent Gold</h5>
         <ul>
           <li><a href="#equipe">Corpo clínico</a></li>
           <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#clinicas">Nossas clínicas</a></li>
           <li><a href="#duvidas">Dúvidas frequentes</a></li>
           <li><a href="mailto:qualydent@qualydentgold.com.br">qualydent@qualydentgold.com.br</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <span>© <span id="year"></span> QualyDent Gold — Clínica Odontológica e Harmonização Facial.</span>
-      <span>Rio do Sul &amp; Otacílio Costa, Santa Catarina.</span>
+    <div class="ftr-bot">
+      <span>© <span id="yr">2026</span> QualyDent Gold — Clínica Odontológica. Rio do Sul &amp; Otacílio Costa, Santa Catarina.</span>
+      <span>Transformando sorrisos, faces e vidas.</span>
     </div>
   </div>
 </footer>
 
-<!-- ============ WHATSAPP FAB ============ -->
-<button class="wa-fab" data-wa-open data-wa-title="Fale agora com a QualyDent Gold">
-  <svg><use href="#i-wa"/></svg><span class="wa-fab-text">Agendar pelo WhatsApp</span>
+<!-- ============ WHATSAPP FLUTUANTE ============ -->
+<button class="float js-agendar" type="button" aria-label="Agendar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.16c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.98-.32-1.69-.62-2.97-1.28-4.91-4.27-5.06-4.47-.15-.2-1.21-1.61-1.21-3.07 0-1.46.77-2.18 1.04-2.48.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.42-.07.66.5.25.6.84 2.06.91 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.36 1.46.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.66-.15.27.1 1.71.81 2 .96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+  <span>Agendar consulta</span>
 </button>
 
-<!-- ============ MODAL: escolher unidade ============ -->
-<div class="modal-overlay" id="wa-modal">
-  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="wa-modal-title">
-    <button class="modal-close" aria-label="Fechar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></button>
-    <img class="hero-mark" src="assets/img/brand/icon-square-sm.png" alt="">
-    <h3 id="wa-modal-title">Para qual unidade deseja falar?</h3>
-    <p>Você será direcionado para o WhatsApp da unidade escolhida.</p>
-    <div class="modal-options">
-      <a class="modal-option" id="wa-opt-riodosul" href="#" target="_blank" rel="noopener">
-        <span><b>Rio do Sul</b><span>(47) 3521-1777</span></span>
-        <svg><use href="#i-wa"/></svg>
+<!-- ============ MODAL DE UNIDADE ============ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-t">
+  <div class="modal-box">
+    <div class="modal-inner">
+      <button class="modal-close" id="modal-close" type="button" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="width:16px;height:16px"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <h3 id="modal-t">Agendar pelo <span class="gold">WhatsApp</span></h3>
+      <p>Para qual unidade você deseja falar?</p>
+      <a class="btn btn-gold btn-block unit" href="https://tintim.link/whatsapp/98473217-b7aa-4608-8ccd-ff98f8e7b892/57076c77-3150-4aa9-bf55-e8fffea6e5b8" target="_blank" rel="noopener">
+        <span>Rio do Sul<small>Alameda Aristiliano Ramos, 539</small></span>
       </a>
-      <a class="modal-option" id="wa-opt-otacilio" href="#" target="_blank" rel="noopener">
-        <span><b>Otacílio Costa</b><span>(49) 99938-9545</span></span>
-        <svg><use href="#i-wa"/></svg>
+      <a class="btn btn-ghost btn-block unit" href="https://tintim.link/whatsapp/e62810bb-f942-4c9d-bf85-c2b9872aa828/10d900f6-f779-49a2-b950-5dcca86b1215" target="_blank" rel="noopener">
+        <span>Otacílio Costa<small>Rua São José, 68 — Sala 102</small></span>
       </a>
     </div>
   </div>
 </div>
 
-<script src="js/main.js"></script>
+<script>
+(function(){
+  var hdr=document.getElementById('hdr');
+  var onScroll=function(){ hdr.classList.toggle('stuck', window.scrollY>18); };
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+
+  var burger=document.getElementById('burger'), mnav=document.getElementById('mnav');
+  burger.addEventListener('click',function(){
+    var open=mnav.classList.toggle('open');
+    burger.classList.toggle('open',open);
+    burger.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');
+  });
+  mnav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){ mnav.classList.remove('open'); burger.classList.remove('open'); });
+  });
+
+  var modal=document.getElementById('modal');
+  var openModal=function(){ modal.classList.add('open'); document.body.style.overflow='hidden'; };
+  var closeModal=function(){ modal.classList.remove('open'); document.body.style.overflow=''; };
+  document.querySelectorAll('.js-agendar').forEach(function(b){
+    b.addEventListener('click',function(){ mnav.classList.remove('open'); burger.classList.remove('open'); openModal(); });
+  });
+  document.getElementById('modal-close').addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){ if(e.target===modal) closeModal(); });
+  modal.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',closeModal); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeModal(); });
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv').forEach(function(el,i){ el.style.transitionDelay=(i%4*70)+'ms'; io.observe(el); });
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
 </body>
 </html>
