@@ -101,22 +101,19 @@ h2.title{font-size:clamp(2rem,4.4vw,3.35rem);margin-bottom:.5em}
              radial-gradient(46% 44% at 8% 78%,rgba(158,111,31,.16),transparent 66%);
   pointer-events:none}
 .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:180px;background:linear-gradient(to bottom,transparent,var(--ink));pointer-events:none}
-.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.06fr .94fr;
-  grid-template-areas:"title founder" "lead founder" "actions founder";
-  column-gap:clamp(28px,4.5vw,72px);row-gap:0;align-items:center}
-.hero-title{grid-area:title;align-self:end}
-.hero-lead{grid-area:lead}
-.hero-actions{grid-area:actions;align-self:start}
-.hero h1{font-size:clamp(2.5rem,6.4vw,4.6rem);line-height:1.02;margin-bottom:.42em}
-.hero .lead{margin-bottom:0}
-.hero-lead{margin-bottom:2rem}
-.hero-cta{display:flex;flex-wrap:wrap;gap:.75rem}
-.hero-trust{display:flex;align-items:center;gap:.75rem;margin-top:1.7rem;color:var(--txt-dimmer);font-size:.83rem}
+.hero-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;
+  text-align:center;gap:clamp(18px,2.8vw,32px)}
+.hero-title,.hero-lead,.hero-actions{width:100%;max-width:760px}
+.hero-actions{display:flex;flex-direction:column;align-items:center}
+.hero h1{font-size:clamp(2.5rem,6.4vw,4.6rem);line-height:1.02;margin-bottom:0}
+.hero .lead{margin-inline:auto;margin-bottom:0}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+.hero-trust{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem;color:var(--txt-dimmer);font-size:.83rem}
 .stars{display:inline-flex;gap:2px;color:var(--gold-2)}
 .stars svg{width:14px;height:14px}
 
 /* founder visual — foto solta sobre a página, sem moldura e sem recorte */
-.founder{grid-area:founder;position:relative;justify-self:center;width:100%;max-width:440px;
+.founder{position:relative;justify-self:center;width:100%;max-width:340px;
   display:flex;flex-direction:column;align-items:center}
 .founder-photo{display:block;width:100%;height:auto;max-width:100%;
   background:transparent;filter:drop-shadow(0 30px 48px rgba(0,0,0,.6));border-radius:var(--r-lg)}
@@ -177,16 +174,20 @@ h2.title{font-size:clamp(2rem,4.4vw,3.35rem);margin-bottom:.5em}
 
 /* ============ 5. TEAM ============ */
 .team{background:var(--ink-2);border-block:1px solid var(--line)}
-.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.4vw,20px);margin-top:clamp(30px,4vw,52px)}
-.pcard{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--ink);transition:transform .55s var(--ease),border-color .45s}
-.pcard:hover{transform:translateY(-6px);border-color:rgba(232,200,122,.4)}
-.pcard-img{aspect-ratio:3/4;overflow:hidden;position:relative;background:radial-gradient(75% 60% at 50% 85%,rgba(217,175,87,.13),transparent 70%),linear-gradient(170deg,#1B1A17,#0D0D0E)}
-.pcard-img img{width:100%;height:100%;object-fit:contain;object-position:center bottom;padding:8% 6% 0;filter:grayscale(.2);transition:filter .6s,transform 1s var(--ease)}
-.pcard:hover .pcard-img img{filter:grayscale(0);transform:scale(1.05)}
-.pcard-img::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top,rgba(10,10,11,.6) 0%,rgba(10,10,11,0) 30%)}
-.pcard-body{padding:1rem 1.1rem 1.25rem}
-.pcard b{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:1.12rem}
-.pcard small{display:block;margin-top:.25rem;font-size:.79rem;color:var(--gold-2);letter-spacing:.06em}
+.team-list{display:flex;flex-direction:column;gap:clamp(14px,1.8vw,22px);margin-top:clamp(30px,4vw,52px);max-width:860px;margin-inline:auto}
+.prow{display:grid;grid-template-columns:clamp(220px,32vw,330px) minmax(0,1fr);gap:clamp(18px,2.8vw,40px);align-items:center;
+  border:1px solid var(--line);border-radius:var(--r-lg);background:var(--ink);padding:clamp(14px,1.7vw,22px);
+  transition:transform .5s var(--ease),border-color .45s,box-shadow .5s var(--ease)}
+.prow:hover{transform:translateY(-4px);border-color:rgba(232,200,122,.42);box-shadow:0 26px 60px -34px rgba(0,0,0,.9)}
+.prow-img{border-radius:var(--r-md);overflow:hidden;
+  background:radial-gradient(75% 60% at 50% 88%,rgba(217,175,87,.15),transparent 70%),linear-gradient(170deg,#1C1B18,#0D0D0E)}
+.prow-img img{display:block;width:100%;height:auto;filter:grayscale(.15);transition:filter .6s var(--ease)}
+.prow:hover .prow-img img{filter:grayscale(0)}
+.prow-body{display:flex;flex-direction:column;align-items:flex-start;gap:.7rem}
+.prow-body b{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.4rem,2.2vw,1.95rem);line-height:1.12}
+.prow-body .role{font-size:.76rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-2)}
+.prow-body .bio{color:var(--txt-dim);font-size:.94rem;max-width:52ch}
+.prow-body .btn{padding:.72em 1.3em;font-size:.87rem;margin-top:.2rem}
 
 /* ============ 6. SOCIAL PROOF ============ */
 .rate-row{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,1.6vw,22px);margin-bottom:clamp(26px,3vw,40px)}
@@ -203,22 +204,23 @@ h2.title{font-size:clamp(2rem,4.4vw,3.35rem);margin-bottom:.5em}
 .rev .who b{font-size:.9rem;font-weight:600}
 .rev .who small{display:block;font-size:.74rem;color:var(--txt-dimmer)}
 .vid-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,20px);margin-top:clamp(22px,2.6vw,34px)}
-.vid{position:relative;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5;background:#141416;transition:transform .55s var(--ease),border-color .4s}
+.vid{display:block;position:relative;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5;background:#141416;transition:transform .55s var(--ease),border-color .4s}
 .vid:hover{transform:translateY(-5px);border-color:rgba(232,200,122,.45)}
 .vid img{width:100%;height:100%;object-fit:cover}
 .vid::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,11,.85),transparent 55%)}
-.vid figcaption{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:.9rem 1rem;font-size:.87rem;font-weight:600}
-.vid figcaption small{display:block;font-weight:400;font-size:.72rem;color:var(--txt-dim);letter-spacing:.06em;text-transform:uppercase;margin-top:.15rem}
+.vid .cap{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:.9rem 1rem;font-size:.87rem;font-weight:600}
+.vid .cap small{display:block;font-weight:400;font-size:.72rem;color:var(--txt-dim);letter-spacing:.06em;text-transform:uppercase;margin-top:.15rem}
+.vid .play{position:absolute;z-index:3;left:50%;top:46%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;
+  display:grid;place-items:center;background:var(--grad-gold);color:#14100A;box-shadow:0 14px 30px -12px rgba(217,175,87,.8);
+  transition:transform .45s var(--ease)}
+.vid .play svg{width:20px;height:20px;margin-left:2px}
+.vid:hover .play{transform:translate(-50%,-50%) scale(1.08)}
+.rev q::before{content:"\201C"}
+.rev q::after{content:"\201D"}
+.sub-eyebrow{display:flex;align-items:center;gap:.7rem;margin:clamp(34px,4vw,54px) 0 clamp(16px,2vw,24px);
+  font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2)}
+.sub-eyebrow::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(232,200,122,.35),transparent)}
 
-/* ============ 7. INSTAGRAM ============ */
-.ig{border-block:1px solid var(--line);background:var(--ink-2)}
-.ig-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1.2rem;margin-bottom:clamp(22px,2.6vw,34px)}
-.ig-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.2vw,16px)}
-.ig-grid a{position:relative;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);aspect-ratio:1;background:#141416}
-.ig-grid img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease),filter .5s}
-.ig-grid a:hover img{transform:scale(1.07)}
-.ig-grid a::after{content:"";position:absolute;inset:0;background:rgba(10,10,11,.32);opacity:0;transition:opacity .4s}
-.ig-grid a:hover::after{opacity:1}
 
 /* ============ 8. CLINICS ============ */
 .cl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2vw,26px);margin-top:clamp(30px,4vw,52px)}
@@ -250,7 +252,7 @@ h2.title{font-size:clamp(2rem,4.4vw,3.35rem);margin-bottom:.5em}
 
 /* ============ 10. FAQ ============ */
 .faq{background:var(--ink-2);border-block:1px solid var(--line)}
-.faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,4vw,64px);align-items:start}
+.faq-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(28px,4vw,64px);align-items:start}
 .acc{border-top:1px solid var(--line)}
 .acc details{border-bottom:1px solid var(--line)}
 .acc summary{list-style:none;cursor:pointer;padding:1.15rem 2.5rem 1.15rem 0;position:relative;font-family:'Fraunces',serif;font-size:clamp(1.02rem,1.2vw,1.18rem);line-height:1.35;transition:color .3s}
@@ -261,6 +263,7 @@ h2.title{font-size:clamp(2rem,4.4vw,3.35rem);margin-bottom:.5em}
   transition:transform .4s var(--ease)}
 .acc details[open] summary::after{transform:rotate(135deg)}
 .acc .ans{padding:0 2.5rem 1.35rem 0;color:var(--txt-dim);font-size:.94rem}
+.faq-main{min-width:0}
 .faq-side{border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(22px,2.4vw,32px);background:linear-gradient(150deg,rgba(217,175,87,.09),transparent 62%);position:sticky;top:96px}
 .faq-side h3{font-size:1.5rem;margin-bottom:.6rem}
 .faq-side p{color:var(--txt-dim);font-size:.93rem;margin-bottom:1.3rem}
@@ -314,9 +317,7 @@ h2.title{font-size:clamp(2rem,4.4vw,3.35rem);margin-bottom:.5em}
 @media (min-width:921px){ .mnav{display:none} }
 @media (max-width:1080px){
   .hl-grid{grid-template-columns:repeat(2,1fr)}
-  .team-grid{grid-template-columns:repeat(3,1fr)}
   .rev-grid{grid-template-columns:repeat(2,1fr)}
-  .ig-grid{grid-template-columns:repeat(3,1fr)}
   .ftr-grid{grid-template-columns:1fr 1fr}
   .faq-grid{grid-template-columns:1fr}
   .faq-side{position:static}
@@ -324,11 +325,6 @@ h2.title{font-size:clamp(2rem,4.4vw,3.35rem);margin-bottom:.5em}
 @media (max-width:920px){
   .nav,.hdr .btn{display:none}
   .burger{display:flex}
-  .hero-in{grid-template-columns:1fr;grid-template-areas:"title" "founder" "lead" "actions";row-gap:clamp(18px,3.4vw,26px)}
-  .hero{text-align:center}
-  .hero .lead{margin-inline:auto}
-  .hero-lead{margin-bottom:0}
-  .hero-cta,.hero-trust{justify-content:center}
   .founder{max-width:340px}
   .t-grid,.cl-grid{grid-template-columns:1fr}
   .vid-grid{grid-template-columns:repeat(2,1fr)}
@@ -336,9 +332,10 @@ h2.title{font-size:clamp(2rem,4.4vw,3.35rem);margin-bottom:.5em}
 }
 @media (max-width:620px){
   .hl-grid{grid-template-columns:1fr}
-  .team-grid{grid-template-columns:repeat(2,1fr)}
+  .prow{grid-template-columns:1fr;text-align:center;gap:1.1rem}
+  .prow-body{align-items:center}
+  .prow-body .bio{max-width:none}
   .rev-grid{grid-template-columns:1fr}
-  .ig-grid{grid-template-columns:repeat(2,1fr)}
   .gal{grid-template-columns:repeat(2,1fr)}
   .gal .wide{grid-column:span 2}
   .ftr-grid{grid-template-columns:1fr}
@@ -350,9 +347,6 @@ h2.title{font-size:clamp(2rem,4.4vw,3.35rem);margin-bottom:.5em}
   .tcard-links .btn{width:auto}
   .float span{display:none}
   .float{padding:1rem;border-radius:50%}
-}
-@media (max-width:400px){
-  .team-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -603,26 +597,47 @@ h2.title{font-size:clamp(2rem,4.4vw,3.35rem);margin-bottom:.5em}
       <h2 class="title">Uma equipe com mais de 35 anos de <span class="gold">excelência</span></h2>
       <p class="lead">Uma clínica que te acolhe, te entende e te transmite confiança. Tudo o que você precisa para sua saúde ou estética bucal, você encontra na QualyDent.</p>
     </div>
-    <div class="team-grid">
-      <article class="pcard rv">
-        <div class="pcard-img"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Adriano-1.png" alt="Dr. Adriano" loading="lazy"></div>
-        <div class="pcard-body"><b>Dr. Adriano</b><small>Fundador · Mestre em Odontologia</small></div>
+    <div class="team-list">
+      <article class="prow rv">
+        <div class="prow-img"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Adriano-1.png" alt="Dr. Adriano" loading="lazy"></div>
+        <div class="prow-body">
+          <span class="role">Fundador · Mestre em Odontologia</span>
+          <b>Dr. Adriano</b>
+          <p class="bio">Fundador da QualyDent, clínica que carrega mais de 35 anos de excelência em odontologia — uma trajetória construída sobre confiança, técnica e cuidado.</p>
+          <button class="btn btn-ghost js-agendar" type="button">Agendar consulta</button>
+        </div>
       </article>
-      <article class="pcard rv">
-        <div class="pcard-img"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Dra-Leticia-1.png" alt="Dra. Letícia" loading="lazy"></div>
-        <div class="pcard-body"><b>Dra. Letícia</b><small>Corpo clínico QualyDent</small></div>
+      <article class="prow rv">
+        <div class="prow-img"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Dra-Leticia-1.png" alt="Dra. Letícia" loading="lazy"></div>
+        <div class="prow-body">
+          <span class="role">Corpo clínico QualyDent</span>
+          <b>Dra. Letícia</b>
+          <button class="btn btn-ghost js-agendar" type="button">Agendar consulta</button>
+        </div>
       </article>
-      <article class="pcard rv">
-        <div class="pcard-img"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Dra-Larissa-1.png" alt="Dra. Larissa" loading="lazy"></div>
-        <div class="pcard-body"><b>Dra. Larissa</b><small>Corpo clínico QualyDent</small></div>
+      <article class="prow rv">
+        <div class="prow-img"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Dra-Larissa-1.png" alt="Dra. Larissa" loading="lazy"></div>
+        <div class="prow-body">
+          <span class="role">Corpo clínico QualyDent</span>
+          <b>Dra. Larissa</b>
+          <button class="btn btn-ghost js-agendar" type="button">Agendar consulta</button>
+        </div>
       </article>
-      <article class="pcard rv">
-        <div class="pcard-img"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Eduarda-1.png" alt="Dra. Eduarda" loading="lazy"></div>
-        <div class="pcard-body"><b>Dra. Eduarda</b><small>Corpo clínico QualyDent</small></div>
+      <article class="prow rv">
+        <div class="prow-img"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Eduarda-1.png" alt="Dra. Eduarda" loading="lazy"></div>
+        <div class="prow-body">
+          <span class="role">Corpo clínico QualyDent</span>
+          <b>Dra. Eduarda</b>
+          <button class="btn btn-ghost js-agendar" type="button">Agendar consulta</button>
+        </div>
       </article>
-      <article class="pcard rv">
-        <div class="pcard-img"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Rayanne.png" alt="Dra. Rayanne" loading="lazy"></div>
-        <div class="pcard-body"><b>Dra. Rayanne</b><small>Corpo clínico QualyDent</small></div>
+      <article class="prow rv">
+        <div class="prow-img"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Rayanne.png" alt="Dra. Rayanne" loading="lazy"></div>
+        <div class="prow-body">
+          <span class="role">Corpo clínico QualyDent</span>
+          <b>Dra. Rayanne</b>
+          <button class="btn btn-ghost js-agendar" type="button">Agendar consulta</button>
+        </div>
       </article>
     </div>
   </div>
@@ -662,11 +677,56 @@ h2.title{font-size:clamp(2rem,4.4vw,3.35rem);margin-bottom:.5em}
       </div>
     </div>
 
+    <div class="rev-grid">
+      <article class="rev rv">
+        <span class="stars" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <q>Atendimento excelente da Dra. Letícia e de toda a equipe. Cuidado em cada detalhe dos procedimentos e com a nossa realização. Minha clínica da vida!</q>
+        <div class="who">
+          <span class="av">B</span>
+          <div><b>Bruna R.</b><small>Unidade Rio do Sul · avaliação no Google</small></div>
+        </div>
+      </article>
+      <article class="rev rv">
+        <span class="stars" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <q>Trabalho excelente, todos da minha casa são pacientes e estão muito contentes! Podem confiar de olhos fechados.</q>
+        <div class="who">
+          <span class="av">K</span>
+          <div><b>Kathllen C.</b><small>Unidade Rio do Sul · avaliação no Google</small></div>
+        </div>
+      </article>
+      <article class="rev rv">
+        <span class="stars" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <q>A clínica é maravilhosa. Desde o atendimento da recepcionista Agatha, que é nota mil, até aos outros profissionais.</q>
+        <div class="who">
+          <span class="av">I</span>
+          <div><b>Isa P.</b><small>Unidade Rio do Sul · avaliação no Google</small></div>
+        </div>
+      </article>
+      <article class="rev rv">
+        <span class="stars" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <q>Excelente profissional e tratamento.</q>
+        <div class="who">
+          <span class="av">A</span>
+          <div><b>Adair S.</b><small>Unidade Otacílio Costa · avaliação no Google</small></div>
+        </div>
+      </article>
+      <article class="rev rv">
+        <span class="stars" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <q>Excelente trabalho!</q>
+        <div class="who">
+          <span class="av">M</span>
+          <div><b>Matheus C.</b><small>Unidade Otacílio Costa · avaliação no Google</small></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub-eyebrow rv">Transformações em vídeo</div>
+
     <div class="vid-grid">
-      <figure class="vid rv"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Capa-Maria-Dolores.png" alt="Depoimento de Maria Dolores" loading="lazy"><figcaption>Maria Dolores<small>Depoimento em vídeo</small></figcaption></figure>
-      <figure class="vid rv"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Capa-Depoimento-Doraci.png" alt="Depoimento de Doraci" loading="lazy"><figcaption>Doraci<small>Depoimento em vídeo</small></figcaption></figure>
-      <figure class="vid rv"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Capa-Depoimento-Liamara.png" alt="Depoimento de Liamara" loading="lazy"><figcaption>Liamara<small>Depoimento em vídeo</small></figcaption></figure>
-      <figure class="vid rv"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Capa-Depoimento-Terezinha.png" alt="Depoimento de Terezinha" loading="lazy"><figcaption>Terezinha<small>Depoimento em vídeo</small></figcaption></figure>
+      <a class="vid rv" href="https://www.qualydentgold.com.br/" target="_blank" rel="noopener" aria-label="Assistir ao depoimento de Maria Dolores"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Capa-Maria-Dolores.png" alt="Depoimento de Maria Dolores" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg></span><span class="cap"><b>Maria Dolores</b><small>Assistir ao depoimento</small></span></a>
+      <a class="vid rv" href="https://www.qualydentgold.com.br/" target="_blank" rel="noopener" aria-label="Assistir ao depoimento de Doraci"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Capa-Depoimento-Doraci.png" alt="Depoimento de Doraci" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg></span><span class="cap"><b>Doraci</b><small>Assistir ao depoimento</small></span></a>
+      <a class="vid rv" href="https://www.qualydentgold.com.br/" target="_blank" rel="noopener" aria-label="Assistir ao depoimento de Liamara"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Capa-Depoimento-Liamara.png" alt="Depoimento de Liamara" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg></span><span class="cap"><b>Liamara</b><small>Assistir ao depoimento</small></span></a>
+      <a class="vid rv" href="https://www.qualydentgold.com.br/" target="_blank" rel="noopener" aria-label="Assistir ao depoimento de Terezinha"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Capa-Depoimento-Terezinha.png" alt="Depoimento de Terezinha" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg></span><span class="cap"><b>Terezinha</b><small>Assistir ao depoimento</small></span></a>
     </div>
 
     <div class="rv" style="display:flex;justify-content:center;margin-top:clamp(24px,3vw,38px)">
@@ -679,33 +739,7 @@ h2.title{font-size:clamp(2rem,4.4vw,3.35rem);margin-bottom:.5em}
 </section>
 
 <!-- ============================================================
-     BLOCO 7 — INSTAGRAM
-============================================================ -->
-<section class="section ig">
-  <div class="wrap">
-    <div class="ig-head rv">
-      <div>
-        <span class="eyebrow">@qualydentgold</span>
-        <h2 class="title" style="font-size:clamp(1.7rem,3.4vw,2.6rem);margin-bottom:.35em">Cada sorriso conta uma <span class="gold">história</span></h2>
-        <p class="lead">Acompanhe bastidores, resultados e novidades das duas unidades.</p>
-      </div>
-      <a class="btn btn-ghost" href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
-        Seguir no Instagram
-      </a>
-    </div>
-    <div class="ig-grid rv">
-      <a href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Facetas-em-Resina-1024x695.png" alt="Facetas em resina" loading="lazy"></a>
-      <a href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Consulta-Odontologica-1024x695.png" alt="Consulta odontológica" loading="lazy"></a>
-      <a href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Aparelho-fixo-metalico-1024x695.png" alt="Aparelho fixo metálico" loading="lazy"></a>
-      <a href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Endodontia-1024x696.png" alt="Endodontia" loading="lazy"></a>
-      <a href="https://www.instagram.com/qualydentgold/" target="_blank" rel="noopener"><img src="https://www.qualydentgold.com.br/wp-content/uploads/2026/01/Agrupar-9-1.png" alt="QualyDent Gold" loading="lazy"></a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     BLOCO 8 — CLÍNICAS
+     BLOCO 7 — CLÍNICAS
 ============================================================ -->
 <section class="section" id="clinicas">
   <div class="wrap">
@@ -768,7 +802,7 @@ h2.title{font-size:clamp(2rem,4.4vw,3.35rem);margin-bottom:.5em}
 </section>
 
 <!-- ============================================================
-     BLOCO 9 — CONHEÇA O ESPAÇO
+     BLOCO 8 — CONHEÇA O ESPAÇO
 ============================================================ -->
 <section class="section" style="padding-top:0">
   <div class="wrap">
@@ -786,28 +820,15 @@ h2.title{font-size:clamp(2rem,4.4vw,3.35rem);margin-bottom:.5em}
 </section>
 
 <!-- ============================================================
-     BLOCO 10 — DÚVIDAS
+     BLOCO 9 — DÚVIDAS
 ============================================================ -->
 <section class="section faq" id="duvidas">
   <div class="wrap faq-grid">
-    <div class="rv">
+    <div class="faq-main rv">
       <span class="eyebrow">Perguntas frequentes</span>
       <h2 class="title">Principais <span class="gold">dúvidas</span></h2>
-      <p class="lead">Se a sua pergunta não estiver aqui, é só chamar no WhatsApp — a equipe responde rapidinho.</p>
-      <div class="faq-side" style="margin-top:2rem">
-        <h3>Ainda com dúvidas?</h3>
-        <p>Cada tratamento tem uma página com as principais perguntas respondidas pela nossa equipe.</p>
-        <ul class="info" style="margin-bottom:1.3rem">
-          <li><a href="https://www.qualydentgold.com.br/implante-dentario/" target="_blank" rel="noopener">Dúvidas sobre implante dentário</a></li>
-          <li><a href="https://www.qualydentgold.com.br/odontologia-estetica/" target="_blank" rel="noopener">Dúvidas sobre facetas e estética</a></li>
-          <li><a href="https://www.qualydentgold.com.br/ortodontia/" target="_blank" rel="noopener">Dúvidas sobre ortodontia</a></li>
-          <li><a href="https://www.qualydentgold.com.br/odontopediatria/" target="_blank" rel="noopener">Dúvidas sobre odontopediatria</a></li>
-        </ul>
-        <button class="btn btn-gold btn-block js-agendar" type="button">Falar com a equipe</button>
-      </div>
-    </div>
-
-    <div class="acc rv">
+      <p class="lead" style="margin-bottom:clamp(22px,2.6vw,34px)">Se a sua pergunta não estiver aqui, é só chamar no WhatsApp — a equipe responde rapidinho.</p>
+      <div class="acc">
       <details open>
         <summary>Quais os principais serviços da QualyDent?</summary>
         <div class="ans">A QualyDent oferece tratamentos completos para cuidar de todas as etapas do seu sorriso, como implantes dentários, próteses, ortodontia, lentes e facetas, clareamento dental e outros tratamentos estéticos e funcionais.</div>
@@ -828,12 +849,25 @@ h2.title{font-size:clamp(2rem,4.4vw,3.35rem);margin-bottom:.5em}
         <summary>Como faço para agendar uma consulta?</summary>
         <div class="ans">O agendamento é feito pelo WhatsApp da unidade que você preferir. Basta clicar em qualquer botão de agendamento desta página e escolher entre Rio do Sul ou Otacílio Costa.</div>
       </details>
+      </div>
     </div>
+
+    <aside class="faq-side rv">
+      <h3>Ainda com dúvidas?</h3>
+      <p>Cada tratamento tem uma página com as principais perguntas respondidas pela nossa equipe.</p>
+      <ul class="info" style="margin-bottom:1.4rem">
+        <li><a href="https://www.qualydentgold.com.br/implante-dentario/" target="_blank" rel="noopener">Dúvidas sobre implante dentário</a></li>
+        <li><a href="https://www.qualydentgold.com.br/odontologia-estetica/" target="_blank" rel="noopener">Dúvidas sobre facetas e estética</a></li>
+        <li><a href="https://www.qualydentgold.com.br/ortodontia/" target="_blank" rel="noopener">Dúvidas sobre ortodontia</a></li>
+        <li><a href="https://www.qualydentgold.com.br/odontopediatria/" target="_blank" rel="noopener">Dúvidas sobre odontopediatria</a></li>
+      </ul>
+      <button class="btn btn-gold btn-block js-agendar" type="button">Falar com a equipe</button>
+    </aside>
   </div>
 </section>
 
 <!-- ============================================================
-     BLOCO 11 — CTA FINAL
+     BLOCO 10 — CTA FINAL
 ============================================================ -->
 <section class="section final">
   <div class="wrap final-in rv">
@@ -848,7 +882,7 @@ h2.title{font-size:clamp(2rem,4.4vw,3.35rem);margin-bottom:.5em}
 </section>
 
 <!-- ============================================================
-     BLOCO 12 — RODAPÉ
+     BLOCO 11 — RODAPÉ
 ============================================================ -->
 <footer class="ftr">
   <div class="wrap">
